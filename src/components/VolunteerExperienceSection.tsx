@@ -30,8 +30,19 @@ const volunteerExperiences: VolunteerExperience[] = [
     description: [
       "Organized nutritious meals into distributable portions",
       "Made 200 portions of food meant to last 4-5 meals weekly",
-      "Utilized manual dexterity for efficient food portioning and packaging.", // Refined bullet point 1
-      "Consistently met tight deadlines to ensure timely food distribution." // Refined bullet point 2
+      "Utilized manual dexterity for efficient food portioning and packaging.",
+      "Consistently met tight deadlines to ensure timely food distribution."
+    ],
+  },
+  {
+    title: "Youth Mentor",
+    organization: "Islamic Society of Evansville's Youth Group",
+    location: "", // Assuming no specific location provided, keeping it empty
+    dates: "June 2024 - Ongoing",
+    description: [
+      "Researched and developed Islamic lectures",
+      "Mentored a group of a dozen middle and elementary school students",
+      "Delivered lectures to groups of 15 or more on a weekly basis"
     ],
   },
 ];
