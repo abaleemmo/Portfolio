@@ -30,6 +30,17 @@ const leadershipExperiences: LeadershipExperience[] = [
       "Collaborated with other officers"
     ],
   },
+  {
+    title: "Member",
+    organization: "Signature School Business Club",
+    dates: "August 2023 - May 2024", // Assuming dates based on previous entries
+    description: [
+      "Pitched in the 2024 UE Changemaker Challenge, winning 3rd place",
+      "Pitched in the 2025 UE Changemaker Challenge, winning 2nd place",
+      "Pitched in StartedUP Foundation's Innovate WithIN pitch competition, advancing to the regional round",
+      "Competed in the University of Pennsylvania's Investment Competition"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
