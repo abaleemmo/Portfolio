@@ -15,6 +15,7 @@ const Header = () => {
           <Link to="/" className="text-sm font-medium hover:text-primary">Home</Link>
           <Link to="/about" className="text-sm font-medium hover:text-primary">About</Link>
           <Link to="/work-experiences" className="text-sm font-medium hover:text-primary">Experience</Link>
+          <Link to="/volunteer-experiences" className="text-sm font-medium hover:text-primary">Volunteer</Link> {/* New link */}
           <Link to="/projects" className="text-sm font-medium hover:text-primary">Projects</Link>
           <Link to="/contact" className="text-sm font-medium hover:text-primary">Contact</Link>
         </nav>
@@ -31,6 +32,7 @@ const Header = () => {
                 <Link to="/" className="text-lg font-medium hover:text-primary">Home</Link>
                 <Link to="/about" className="text-lg font-medium hover:text-primary">About</Link>
                 <Link to="/work-experiences" className="text-lg font-medium hover:text-primary">Experience</Link>
+                <Link to="/volunteer-experiences" className="text-lg font-medium hover:text-primary">Volunteer</Link> {/* New link */}
                 <Link to="/projects" className="text-lg font-medium hover:text-primary">Projects</Link>
                 <Link to="/contact" className="text-lg font-medium hover:text-primary">Contact</Link>
               </nav>
