@@ -13,8 +13,8 @@ const volunteerExperiences: VolunteerExperience[] = [
   {
     title: "Volunteer Coordinator",
     organization: "Mobile Food Pantry by MASIHA",
-    location: "", // Assuming no specific location provided, similar to previous work experience
-    dates: "Ongoing", // Assuming ongoing as no specific dates were given
+    location: "",
+    dates: "January 2024 - Ongoing", // Updated dates
     description: [
       "Managed food inventory",
       "Coordinated dozens of volunteers simultaneously",
