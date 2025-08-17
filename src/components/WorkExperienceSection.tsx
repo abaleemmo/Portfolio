@@ -13,10 +13,10 @@ const workExperiences: WorkExperience[] = [
   {
     title: "Inventory Manager",
     company: "Paradime Enterprise LLC",
-    location: "Remote", // Assuming remote as no specific city was given
+    location: "", // Removed "Remote"
     dates: "January 2025 - Present",
     description: [
-      "Managed 5 figures of perfume inventory",
+      "Managed five figures worth of perfume inventory", // Updated wording
       "Fulfilled hundreds of orders",
       "Designed marketing materials including an online store"
     ],
@@ -36,7 +36,7 @@ const workExperiences: WorkExperience[] = [
   {
     title: "Multimedia and Marketing Intern",
     company: "Catena LLC",
-    location: "Remote",
+    location: "", // Removed "Remote"
     dates: "May 2024 - October 2024",
     description: [
       "Worked across the sales and marketing teams",
