@@ -103,11 +103,6 @@ const LeadershipSection: React.FC = () => {
             <LeadershipCard key={index} {...experience} />
           ))}
         </div>
-        {leadershipExperiences.length === 0 && (
-          <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
-            No leadership experiences to display yet. Add your leadership roles here!
-          </p>
-        )}
       </div>
     </section>
   );
