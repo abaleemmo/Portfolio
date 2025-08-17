@@ -16,22 +16,22 @@ const workExperiences: WorkExperience[] = [
     location: "Evansville, IN",
     dates: "June 2025 - July 2025",
     description: [
-      "Completed immersive computer science training with industry mentors and educators.",
-      "Gained hands-on experience with CSS, HTML, and Javascript.",
-      "Strengthened teamwork, problem-solving, and presentation skills.",
-      "Explored career pathways through networking, workshops, and guest speakers."
+      "Completed immersive computer science training with industry mentors and educators",
+      "Gained hands-on experience with CSS, HTML, and Javascript",
+      "Strengthened teamwork, problem-solving, and presentation skills",
+      "Explored career pathways through networking, workshops, and guest speakers"
     ],
   },
   {
     title: "Multimedia and Marketing Intern",
     company: "Catena LLC",
-    location: "Remote", // Assuming remote as no specific city was given
+    location: "Remote",
     dates: "May 2024 - October 2024",
     description: [
-      "Worked across the sales and marketing teams.",
-      "Aided in the design of product labels.",
-      "Went to outreach and networking events to identify customer segments.",
-      "Generated dozens of leads."
+      "Worked across the sales and marketing teams",
+      "Aided in the design of product labels",
+      "Went to outreach and networking events to identify customer segments",
+      "Generated dozens of leads"
     ],
   },
 ];

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="border-t bg-background py-6 text-center text-sm text-muted-foreground">
       <div className="container">
-        &copy; {new Date().getFullYear()} Abdul-Aleem Mohammed. All rights reserved.
+        {new Date().getFullYear()} Abdul-Aleem Mohammed.
       </div>
     </footer>
   );
