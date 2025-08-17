@@ -18,7 +18,7 @@ const volunteerExperiences: VolunteerExperience[] = [
     description: [
       "Managed food inventory",
       "Coordinated dozens of volunteers simultaneously",
-      "Coordinated food supply logistics to feed over 50 families weekly", // Updated bullet point
+      "Coordinated food supply logistics to feed over 50 families weekly",
       "Represented the organization at dozens of outreach events, engaging with the community and raising awareness in English and Spanish"
     ],
   },
@@ -26,10 +26,11 @@ const volunteerExperiences: VolunteerExperience[] = [
     title: "Volunteer",
     organization: "Mobile Food Pantry by MASIHA",
     location: "",
-    dates: "January 2021 - Ongoing", // New volunteer role dates
+    dates: "January 2021 - Ongoing",
     description: [
       "Organized nutritious meals into distributable portions",
-      "Made 200 portions of food meant to last 4-5 meals weekly"
+      "Made 200 portions of food meant to last 4-5 meals weekly",
+      "Worked with hands, worked on tight timelines" // New bullet point
     ],
   },
 ];
