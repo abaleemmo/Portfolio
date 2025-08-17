@@ -30,7 +30,8 @@ const volunteerExperiences: VolunteerExperience[] = [
     description: [
       "Organized nutritious meals into distributable portions",
       "Made 200 portions of food meant to last 4-5 meals weekly",
-      "Worked with hands, worked on tight timelines" // New bullet point
+      "Utilized manual dexterity for efficient food portioning and packaging.", // Refined bullet point 1
+      "Consistently met tight deadlines to ensure timely food distribution." // Refined bullet point 2
     ],
   },
 ];
