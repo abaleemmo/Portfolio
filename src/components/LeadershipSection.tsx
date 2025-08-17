@@ -69,6 +69,17 @@ const leadershipExperiences: LeadershipExperience[] = [
       "Collaborated in a team to answer high-level STEM questions"
     ],
   },
+  {
+    title: "Lawyer",
+    organization: "Signature School Mock Trial Team",
+    dates: "August 2024 - Ongoing",
+    description: [
+      "Competed in the Indiana Bar Foundation's High School Mock Trial Competition",
+      "Played a defense and prosecution lawyer",
+      "Collaborated with a team to examine evidence and testimonials and develop trial arguments",
+      "Communicated findings in front of judges, lawyers, and paralegals"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
