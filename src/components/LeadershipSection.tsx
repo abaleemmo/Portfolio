@@ -9,26 +9,7 @@ interface LeadershipExperience {
 }
 
 const leadershipExperiences: LeadershipExperience[] = [
-  {
-    title: "Student Council President",
-    organization: "North High School",
-    dates: "August 2023 - May 2024",
-    description: [
-      "Led a team of 15 student representatives to organize school events.",
-      "Initiated and managed a successful fundraising campaign for new library resources.",
-      "Represented student body concerns to school administration."
-    ],
-  },
-  {
-    title: "Robotics Club Captain",
-    organization: "North High School Robotics Club",
-    dates: "September 2022 - May 2024",
-    description: [
-      "Guided a team of 10 members in designing and building competitive robots.",
-      "Mentored junior members in programming and mechanical design.",
-      "Secured regional championship in 2023."
-    ],
-  },
+  // Clear this array to remove existing content
 ];
 
 const LeadershipSection: React.FC = () => {
@@ -41,6 +22,11 @@ const LeadershipSection: React.FC = () => {
             <LeadershipCard key={index} {...experience} />
           ))}
         </div>
+        {leadershipExperiences.length === 0 && (
+          <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
+            No leadership experiences to display yet. Add your leadership roles here!
+          </p>
+        )}
       </div>
     </section>
   );
