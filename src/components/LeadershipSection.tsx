@@ -60,6 +60,15 @@ const leadershipExperiences: LeadershipExperience[] = [
       "Fundraised to establish teams"
     ],
   },
+  {
+    title: "Co-Founder and A-Team member",
+    organization: "Signature School National Science Bowl Team",
+    dates: "August 2024 - Ongoing",
+    description: [
+      "Studied physics concepts",
+      "Collaborated in a team to answer high-level STEM questions"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
