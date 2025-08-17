@@ -13,7 +13,7 @@ const workExperiences: WorkExperience[] = [
   {
     title: "Evansville Catapult",
     company: "Nextech",
-    location: "Evansville, IN", // Assuming Evansville, IN based on "Evansville Catapult"
+    location: "Evansville, IN",
     dates: "June 2025 - July 2025",
     description: [
       "Completed immersive computer science training with industry mentors and educators.",
@@ -23,25 +23,15 @@ const workExperiences: WorkExperience[] = [
     ],
   },
   {
-    title: "Summer Intern",
-    company: "Tech Solutions Inc.",
-    location: "Remote",
-    dates: "June 2023 - August 2023",
+    title: "Multimedia and Marketing Intern",
+    company: "Catena LLC",
+    location: "Remote", // Assuming remote as no specific city was given
+    dates: "May 2024 - October 2024",
     description: [
-      "Assisted in developing and testing new features for a web application using React and Node.js.",
-      "Collaborated with a team of engineers to debug and optimize existing code.",
-      "Gained hands-on experience with agile development methodologies and version control (Git)."
-    ],
-  },
-  {
-    title: "Volunteer Web Developer",
-    company: "Local Community Center",
-    location: "Your City, State",
-    dates: "September 2022 - May 2023",
-    description: [
-      "Designed and built a responsive website for the community center using HTML, CSS, and JavaScript.",
-      "Implemented a dynamic events calendar and contact form to improve user engagement.",
-      "Trained staff on how to update website content, ensuring long-term maintainability."
+      "Worked across the sales and marketing teams.",
+      "Aided in the design of product labels.",
+      "Went to outreach and networking events to identify customer segments.",
+      "Generated dozens of leads."
     ],
   },
 ];
