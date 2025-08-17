@@ -11,6 +11,17 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
   {
+    title: "Inventory Manager",
+    company: "Paradime Enterprise LLC",
+    location: "Remote", // Assuming remote as no specific city was given
+    dates: "January 2025 - Present",
+    description: [
+      "Managed 5 figures of perfume inventory",
+      "Fulfilled hundreds of orders",
+      "Designed marketing materials including an online store"
+    ],
+  },
+  {
     title: "Evansville Catapult",
     company: "Nextech",
     location: "Evansville, IN",
