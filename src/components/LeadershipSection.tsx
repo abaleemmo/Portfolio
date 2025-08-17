@@ -80,6 +80,17 @@ const leadershipExperiences: LeadershipExperience[] = [
       "Communicated findings in front of judges, lawyers, and paralegals"
     ],
   },
+  {
+    title: "Researcher",
+    organization: "Signature School Mathworks Math Modeling Challenge Team",
+    dates: "August 2024 - Ongoing",
+    description: [
+      "Collaborated in a team of 5 to compete in the Siam's M3 Challenge",
+      "Developed mathematical models based on calculus and physics",
+      "Leveraged machine learning and microsoft excel's statistics tools to establish mathematical relationships",
+      "Wrote a report compiling our findings"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
