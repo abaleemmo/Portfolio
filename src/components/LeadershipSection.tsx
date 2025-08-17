@@ -70,7 +70,7 @@ const leadershipExperiences: LeadershipExperience[] = [
     ],
   },
   {
-    title: "Lawyer",
+    title: "Lawyer and Officer",
     organization: "Signature School Mock Trial Team",
     dates: "August 2024 - Ongoing",
     description: [
