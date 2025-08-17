@@ -97,7 +97,7 @@ const LeadershipSection: React.FC = () => {
   return (
     <section className="py-12 md:py-24 bg-white dark:bg-gray-800">
       <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">Leadership</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">Other Experiences</h2>
         <div className="grid gap-8">
           {leadershipExperiences.map((experience, index) => (
             <LeadershipCard key={index} {...experience} />
