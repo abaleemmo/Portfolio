@@ -36,13 +36,25 @@ const volunteerExperiences: VolunteerExperience[] = [
   },
   {
     title: "Youth Mentor",
-    organization: "Islamic Society of Evansville's Youth Group",
-    location: "", // Assuming no specific location provided, keeping it empty
+    organization: "Islamic Society of Evansville Youth Group",
+    location: "",
     dates: "June 2024 - Ongoing",
     description: [
       "Researched and developed Islamic lectures",
       "Mentored a group of a dozen middle and elementary school students",
       "Delivered lectures to groups of 15 or more on a weekly basis"
+    ],
+  },
+  {
+    title: "Youth Board Member",
+    organization: "Islamic Society of Evansville Youth Group",
+    location: "",
+    dates: "July 2025 - Ongoing",
+    description: [
+      "Represented over 50 male youth voices",
+      "Organized fundraisers",
+      "Organized youth outreach events",
+      "Developed a digital sign adopted by the Islamic Society of Evansville to portray community and youth events as well as prayer times"
     ],
   },
 ];
