@@ -9,7 +9,16 @@ interface LeadershipExperience {
 }
 
 const leadershipExperiences: LeadershipExperience[] = [
-  // Clear this array to remove existing content
+  {
+    title: "President",
+    organization: "Signature School Business Club",
+    dates: "August 2025 - Ongoing",
+    description: [
+      "Mentored teams to develop business ideas",
+      "Coached teams and refined underclassmen pitching skills",
+      "Established a pitch competition at Signature School"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
