@@ -11,6 +11,18 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
   {
+    title: "Evansville Catapult",
+    company: "Nextech",
+    location: "Evansville, IN", // Assuming Evansville, IN based on "Evansville Catapult"
+    dates: "June 2025 - July 2025",
+    description: [
+      "Completed immersive computer science training with industry mentors and educators.",
+      "Gained hands-on experience with CSS, HTML, and Javascript.",
+      "Strengthened teamwork, problem-solving, and presentation skills.",
+      "Explored career pathways through networking, workshops, and guest speakers."
+    ],
+  },
+  {
     title: "Summer Intern",
     company: "Tech Solutions Inc.",
     location: "Remote",
