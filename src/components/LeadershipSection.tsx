@@ -33,12 +33,22 @@ const leadershipExperiences: LeadershipExperience[] = [
   {
     title: "Member",
     organization: "Signature School Business Club",
-    dates: "August 2023 - May 2024", // Assuming dates based on previous entries
+    dates: "August 2023 - May 2024",
     description: [
       "Pitched in the 2024 UE Changemaker Challenge, winning 3rd place",
       "Pitched in the 2025 UE Changemaker Challenge, winning 2nd place",
       "Pitched in StartedUP Foundation's Innovate WithIN pitch competition, advancing to the regional round",
       "Competed in the University of Pennsylvania's Investment Competition"
+    ],
+  },
+  {
+    title: "Founder and Team Captain",
+    organization: "Signature School American Rocketry Challenge Team",
+    dates: "August 2024 - Ongoing",
+    description: [
+      "Designed a model rocket to the American Rocketry Challenge specifications",
+      "Coordinated 10 team members to conduct multiple tasks including fundraising, rocket design, rocket building, and team marketing",
+      "Financed the cost of the model rockets through fundraising"
     ],
   },
 ];
