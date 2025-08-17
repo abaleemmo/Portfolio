@@ -19,6 +19,17 @@ const leadershipExperiences: LeadershipExperience[] = [
       "Established a pitch competition at Signature School"
     ],
   },
+  {
+    title: "Vice President",
+    organization: "Signature School Business Club",
+    dates: "August 2024 - May 2025",
+    description: [
+      "Mentored teams to top 20 in the UE Changemaker Challenge",
+      "Mentored teams to the regionals round of the Innovate WithIN competition",
+      "Coordinated a team of underclassmen in a fundraising competition",
+      "Collaborated with other officers"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
