@@ -11,6 +11,19 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
   {
+    title: "Co-Founder",
+    company: "Boomerang Learning LLC",
+    location: "",
+    dates: "January 2024 - February 2025",
+    description: [
+      "Developed an AI platform aimed at identifying gaps in student abilities and relaying them to teachers, parents, and tutors",
+      "Developed and designed marketing materials including an informational website, pamphlets, business cards, and shirts",
+      "Pitched the company at multiple events including the UE Changemaker Challenge (twice), the regional round of the StartedUP Foundation's Innovate withIN competition, the semi-finals round of The Mill's Crossroads Pitch Competition, and the StartedUP Foundation's alumni pitch competition",
+      "Coordinated weekly staff all-hands meetings",
+      "Conducted cold outreach and networked with teachers and entrepreneurs across the midwest"
+    ],
+  },
+  {
     title: "Inventory Manager",
     company: "Paradime Enterprise LLC",
     location: "", // Removed "Remote"
