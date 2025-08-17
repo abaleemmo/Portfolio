@@ -10,7 +10,17 @@ interface VolunteerExperience {
 }
 
 const volunteerExperiences: VolunteerExperience[] = [
-  // Volunteer experiences will be added here based on user input
+  {
+    title: "Volunteer Coordinator",
+    organization: "Mobile Food Pantry by MASIHA",
+    location: "", // Assuming no specific location provided, similar to previous work experience
+    dates: "Ongoing", // Assuming ongoing as no specific dates were given
+    description: [
+      "Managed food inventory",
+      "Coordinated dozens of volunteers simultaneously",
+      "Coordinated food supply logistics to feed 50 families weekly"
+    ],
+  },
 ];
 
 const VolunteerExperienceSection: React.FC = () => {
