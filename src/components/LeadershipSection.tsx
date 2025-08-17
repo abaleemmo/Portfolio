@@ -51,6 +51,15 @@ const leadershipExperiences: LeadershipExperience[] = [
       "Financed the cost of the model rockets through fundraising"
     ],
   },
+  {
+    title: "Vice President",
+    organization: "Signature School Robotics Club",
+    dates: "August 2025 - Ongoing",
+    description: [
+      "Restarted Signature School's robotics competition teams after a 5-year hiatus",
+      "Fundraised to establish teams"
+    ],
+  },
 ];
 
 const LeadershipSection: React.FC = () => {
