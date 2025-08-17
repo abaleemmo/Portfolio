@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="container px-4 md:px-6 text-center">
         <div className="flex flex-col items-center space-y-4">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none text-gray-900 dark:text-gray-50">
-            Hi, I'm <span className="text-blue-600 dark:text-blue-400">Your Name</span>
+            Hi, I'm <span className="text-blue-600 dark:text-blue-400">Abdul-Aleem Mohammed</span>
           </h1>
           <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl dark:text-gray-300">
             A passionate high school student exploring the world of technology and creativity.

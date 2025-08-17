@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@/components/Layout';
-import WorkExperienceSection from '@/components/WorkExperienceSection'; // New import
+// import WorkExperienceSection from '@/components/WorkExperienceSection'; // Removed import
 
 const About = () => {
   return (
@@ -11,7 +11,7 @@ const About = () => {
           This is where you'll tell your story! Talk about your interests, passions, and what drives you.
         </p>
       </div>
-      <WorkExperienceSection /> {/* Added Work Experience Section */}
+      {/* <WorkExperienceSection /> Removed Work Experience Section */}
     </Layout>
   );
 };
