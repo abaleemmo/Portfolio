@@ -20,7 +20,11 @@ const educationEntries: EducationEntry[] = [
       "Engaged in a challenging academic program designed to prepare students for top universities, emphasizing critical thinking, problem-solving, and interdisciplinary learning.",
       "Actively participated in various academic clubs and competitions, further developing skills in leadership, teamwork, and specialized subjects.",
       "Undertook advanced coursework in subjects like AP Calculus, AP Physics, and Computer Science, demonstrating a strong aptitude for rigorous academic challenges.",
-      "Collaborated on numerous projects, fostering a collaborative learning environment and enhancing communication skills."
+      "Collaborated on numerous projects, fostering a collaborative learning environment and enhancing communication skills.",
+      "AP Scores:",
+      "  • 2023: AP United States History (4)",
+      "  • 2024: AP Physics 1: Algebra-Based (4), AP United States Government and Politics (5), AP English Language and Composition (5), AP World History: Modern (5), AP Seminar (4), AP Precalculus (5), AP Microeconomics (3), AP Macroeconomics (4)",
+      "  • 2025: AP English Literature and Composition (4), AP Calculus BC (5, AB Subscore: 5), AP Spanish Language and Culture (5), AP Physics 2: Algebra-Based (5), AP Research (5), AP Chemistry (5)"
     ],
   },
   {
