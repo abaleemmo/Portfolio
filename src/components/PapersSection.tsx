@@ -23,6 +23,11 @@ const papers: Paper[] = [
     description: "This paper looks at the effect of surface area of a spherical bob on the damping of a simple pendulum. I wrote this paper during my junior year as a part of my IB Physics SL curriculum, and received a 19 raw mark and 18 moderated mark.",
     pdfUrl: "/pendulum-damping-paper.pdf", // Path to your PDF in the public folder
   },
+  {
+    title: "Effect of Note-Taking Medium on Memory Recall",
+    description: "This paper looks at the effect of note-taking medium on memory recall as guided by the external storage hypothesis. I wrote this paper during my junior year as a part of my IB Psychology SL curriculum, conducting the experiment in a group of 5 on freshmen. I received a 17 raw and moderated mark.",
+    pdfUrl: "/note-taking-memory-paper.pdf", // Path to your PDF in the public folder
+  },
 ];
 
 const PapersSection: React.FC = () => {
