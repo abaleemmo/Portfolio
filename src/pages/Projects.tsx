@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '@/components/Layout';
-import PapersSection from '@/components/PapersSection'; // Import PapersSection
-import { Separator } from '@/components/ui/separator'; // Import Separator
+import PapersSection from '@/components/PapersSection';
+import GraphicDesignProjectsSection from '@/components/GraphicDesignProjectsSection'; // Import new section
+import { Separator } from '@/components/ui/separator';
 
 const Projects = () => {
   return (
@@ -12,8 +13,10 @@ const Projects = () => {
           Showcase your amazing projects here! Each project can have a title, description, and links.
         </p>
       </div>
-      <PapersSection /> {/* Add the PapersSection here */}
-      <Separator className="my-12 md:my-24" /> {/* Add a separator */}
+      <PapersSection />
+      <Separator className="my-12 md:my-24" />
+      <GraphicDesignProjectsSection /> {/* Add the Graphic Design Projects section here */}
+      <Separator className="my-12 md:my-24" /> {/* Add another separator */}
       {/* You can add other project sections below this */}
     </Layout>
   );
