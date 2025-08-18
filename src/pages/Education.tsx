@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import EducationSection from '@/components/EducationSection';
+import TestScoresSection from '@/components/TestScoresSection'; // Import TestScoresSection
+import { Separator } from '@/components/ui/separator';
 
 const Education = () => {
   return (
@@ -14,6 +16,8 @@ const Education = () => {
         </p>
       </div>
       <EducationSection />
+      <Separator className="my-12 md:my-24" /> {/* Separator between sections */}
+      <TestScoresSection />
     </Layout>
   );
 };
