@@ -7,15 +7,17 @@ interface EducationCardProps {
   location: string;
   dates: string;
   description?: string[];
+  gpa?: string; // New prop for GPA
 }
 
-const EducationCard: React.FC<EducationCardProps> = ({ degree, institution, location, dates, description }) => {
+const EducationCard: React.FC<EducationCardProps> = ({ degree, institution, location, dates, description, gpa }) => {
   return (
     <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
         <CardTitle className="text-xl font-semibold">{degree}</CardTitle>
         <CardDescription className="text-gray-600 dark:text-gray-400">
           {institution} {location && `• ${location}`} • {dates}
+          {gpa && <p className="mt-1">GPA: {gpa}</p>} {/* Display GPA if provided */}
         </CardDescription>
       </CardHeader>
       {description && description.length > 0 && (

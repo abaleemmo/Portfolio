@@ -7,6 +7,7 @@ interface EducationEntry {
   location: string;
   dates: string;
   description?: string[];
+  gpa?: string; // Added GPA to the interface
 }
 
 const educationEntries: EducationEntry[] = [
@@ -15,6 +16,7 @@ const educationEntries: EducationEntry[] = [
     institution: "Signature School",
     location: "Evansville, IN",
     dates: "August 2022 - May 2026 (Expected)",
+    gpa: "4.5870 / 4.0 Scale", // Added GPA here
     description: [
       "Signature School is a nationally recognized, tuition-free charter high school known for its rigorous curriculum in STEM and liberal arts. Consistently ranked among the top high schools in the nation, it fosters an environment of academic excellence and critical thinking.",
       "Engaged in a challenging academic program designed to prepare students for top universities, emphasizing critical thinking, problem-solving, and interdisciplinary learning.",
