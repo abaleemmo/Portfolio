@@ -43,6 +43,11 @@ const papers: Paper[] = [
     description: "This report was written during my junior year with a group to justify our investment strategy in curating a portfolio in accordance with a case study.",
     pdfUrl: "/wharton-investment-report.pdf", // Path to your PDF in the public folder
   },
+  {
+    title: "2023-2024 Wharton Investment Competition Final Report",
+    description: "This report was my team's submission for the 2023-2024 Wharton Investment Competition, written during my sophomore year to justify our investment strategy in accordance with a case study.",
+    pdfUrl: "/wharton-investment-report-2024.pdf", // Path to your PDF in the public folder
+  },
 ];
 
 const PapersSection: React.FC = () => {
