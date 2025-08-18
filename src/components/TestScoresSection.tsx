@@ -1,7 +1,12 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card'; // Import CardDescription
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 
 interface APScore {
+  year: string;
+  scores: { subject: string; score: string; }[];
+}
+
+interface IBScore {
   year: string;
   scores: { subject: string; score: string; }[];
 }
@@ -30,8 +35,8 @@ const apScores: APScore[] = [
     year: "2025",
     scores: [
       { subject: "AP English Literature and Composition", score: "4" },
-      { subject: "AP Calculus BC", score: "5" }, // Changed to only BC score
-      { subject: "AP Calculus AB Subscore", score: "5" }, // New entry for AB Subscore
+      { subject: "AP Calculus BC", score: "5" },
+      { subject: "AP Calculus AB Subscore", score: "5" },
       { subject: "AP Spanish Language and Culture", score: "5" },
       { subject: "AP Physics 2: Algebra-Based", score: "5" },
       { subject: "AP Research", score: "5" },
@@ -45,6 +50,26 @@ const apScores: APScore[] = [
       { subject: "AP Physics C: Mechanics", score: "Expected" },
       { subject: "AP Physics C: Electricity and Magnetism", score: "Expected" },
       { subject: "AP Statistics", score: "Expected" },
+    ],
+  },
+];
+
+const ibScores: IBScore[] = [
+  {
+    year: "2025",
+    scores: [
+      { subject: "Physics SL", score: "6" },
+      { subject: "Psychology SL", score: "6" },
+    ],
+  },
+  {
+    year: "2026 (Expected)",
+    scores: [
+      { subject: "Math HL AA", score: "Expected" },
+      { subject: "English HL", score: "Expected" },
+      { subject: "Chemistry HL", score: "Expected" },
+      { subject: "Spanish SL", score: "Expected" },
+      { subject: "Sports Science SL", score: "Expected" },
     ],
   },
 ];
@@ -64,6 +89,27 @@ const TestScoresSection: React.FC = () => {
             </CardHeader>
             <CardContent>
               {apScores.map((yearData, index) => (
+                <div key={index} className="mb-4 last:mb-0">
+                  <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">• {yearData.year}:</h3>
+                  <ul className="list-disc pl-8 space-y-1 text-gray-700 dark:text-gray-300">
+                    {yearData.scores.map((score, scoreIndex) => (
+                      <li key={scoreIndex}>{score.subject} ({score.score})</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 mt-8">
+            <CardHeader>
+              <CardTitle className="text-xl font-semibold">International Baccalaureate (IB) Scores</CardTitle>
+              <CardDescription className="text-gray-600 dark:text-gray-400">
+                My IB scores reflect my performance in the rigorous International Baccalaureate Diploma Programme. For more information on IB scoring and subject details, please refer to the official International Baccalaureate Organization website (ibo.org).
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {ibScores.map((yearData, index) => (
                 <div key={index} className="mb-4 last:mb-0">
                   <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">• {yearData.year}:</h3>
                   <ul className="list-disc pl-8 space-y-1 text-gray-700 dark:text-gray-300">

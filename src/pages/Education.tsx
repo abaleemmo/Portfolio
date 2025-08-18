@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import EducationSection from '@/components/EducationSection';
 import TestScoresSection from '@/components/TestScoresSection';
-import IBTestScoresSection from '@/components/IBTestScoresSection'; // Import IBTestScoresSection
 import { Separator } from '@/components/ui/separator';
 
 const Education = () => {
@@ -19,8 +18,6 @@ const Education = () => {
       <EducationSection />
       <Separator className="my-12 md:my-24" /> {/* Separator between sections */}
       <TestScoresSection />
-      <Separator className="my-12 md:my-24" /> {/* Separator between sections */}
-      <IBTestScoresSection /> {/* New IB Test Scores section */}
     </Layout>
   );
 };
