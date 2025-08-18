@@ -39,6 +39,18 @@ const academicHonors: AcademicHonor[] = [
     dates: "Expected",
     description: "Expected to receive an award from the National Merit Scholarship Program based on PSAT/NMSQT scores.",
   },
+  {
+    title: "Member",
+    issuer: "National Honor Society",
+    dates: "August 2024 - Ongoing",
+    description: "Inducted into the prestigious National Honor Society, recognizing outstanding achievements in scholarship, leadership, service, and character. Actively participate in community service initiatives and uphold the highest academic standards.",
+  },
+  {
+    title: "Member",
+    issuer: "Mu Alpha Theta (National High School and Two-Year College Mathematics Honor Society)",
+    dates: "August 2024 - Ongoing",
+    description: "Joined Mu Alpha Theta, the national mathematics honor society, celebrating excellence in mathematics. Engage in mathematical competitions, tutoring, and foster a passion for advanced mathematical concepts.",
+  },
 ];
 
 const AcademicHonorsSection: React.FC = () => {
