@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { AspectRatio } from '@/components/ui/aspect-ratio'; // Import AspectRatio
-import ImageViewerModal from './ImageViewerModal'; // Import ImageViewerModal
+import ImageViewerModal from './ImageViewerModal';
 
 interface GraphicDesignCardProps {
   title: string;
   description: string;
-  imageUrl: string; // Changed from pdfUrl
+  imageUrl: string;
 }
 
 const GraphicDesignCard: React.FC<GraphicDesignCardProps> = ({ title, description, imageUrl }) => {
@@ -16,14 +15,11 @@ const GraphicDesignCard: React.FC<GraphicDesignCardProps> = ({ title, descriptio
   return (
     <>
       <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
-        <CardHeader className="p-0">
-          <AspectRatio ratio={16 / 9} className="rounded-t-lg overflow-hidden">
-            <img src={imageUrl} alt={title} className="object-cover w-full h-full" />
-          </AspectRatio>
+        <CardHeader> {/* Removed AspectRatio and img from here */}
+          <CardTitle className="text-xl font-semibold">{title}</CardTitle>
         </CardHeader>
         <CardContent className="p-4 flex-grow flex flex-col justify-between">
           <div>
-            <CardTitle className="text-xl font-semibold mb-2">{title}</CardTitle>
             <p className="text-sm text-gray-700 dark:text-gray-300">{description}</p>
           </div>
           <div className="mt-4 flex justify-end">
