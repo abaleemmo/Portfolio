@@ -16,9 +16,9 @@ const educationEntries: EducationEntry[] = [
     location: "Evansville, IN",
     dates: "August 2022 - May 2026 (Expected)",
     description: [
-      "Ranked among the top high schools nationally.",
-      "Focus on STEM and liberal arts curriculum.",
-      "Participated in various extracurricular activities and clubs."
+      "Signature School is a nationally recognized, tuition-free charter high school known for its rigorous curriculum in STEM and liberal arts.",
+      "Consistently ranked among the top high schools in the nation, it fosters an environment of academic excellence and critical thinking.",
+      "Engaged in a challenging academic program designed to prepare students for top universities."
     ],
   },
   {
