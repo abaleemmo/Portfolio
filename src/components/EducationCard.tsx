@@ -17,7 +17,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ degree, institution, loca
         <CardTitle className="text-xl font-semibold">{degree}</CardTitle>
         <CardDescription className="text-gray-600 dark:text-gray-400">
           {institution} {location && `• ${location}`} • {dates}
-          {gpa && <p className="mt-1">GPA: {gpa}</p>} {/* Display GPA if provided */}
+          {gpa && <p className="mt-2 text-lg font-bold text-gray-800 dark:text-gray-200">GPA: {gpa}</p>} {/* Display GPA with more prominent styling */}
         </CardDescription>
       </CardHeader>
       {description && description.length > 0 && (
