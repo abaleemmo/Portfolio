@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card'; // Import CardDescription
 
 interface APScore {
   year: string;
@@ -37,6 +37,15 @@ const apScores: APScore[] = [
       { subject: "AP Chemistry", score: "5" },
     ],
   },
+  {
+    year: "2026 (Expected)",
+    scores: [
+      { subject: "AP Computer Science A", score: "Expected" },
+      { subject: "AP Physics C: Mechanics", score: "Expected" },
+      { subject: "AP Physics C: Electricity and Magnetism", score: "Expected" },
+      { subject: "AP Statistics", score: "Expected" },
+    ],
+  },
 ];
 
 const TestScoresSection: React.FC = () => {
@@ -48,11 +57,11 @@ const TestScoresSection: React.FC = () => {
           <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-xl font-semibold">Advanced Placement (AP) Scores</CardTitle>
+              <CardDescription className="text-gray-600 dark:text-gray-400">
+                My AP scores consistently reflect strong performance in challenging subjects, with many results significantly exceeding national averages. For detailed national average scores by subject and year, please refer to the official College Board website (collegeboard.org).
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
-                Your AP scores consistently demonstrate a strong grasp of advanced subjects, with many scores at or above the national average for these challenging exams. For specific national average scores by subject and year, please refer to the official College Board website (collegeboard.org).
-              </p>
               {apScores.map((yearData, index) => (
                 <div key={index} className="mb-4 last:mb-0">
                   <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">• {yearData.year}:</h3>
