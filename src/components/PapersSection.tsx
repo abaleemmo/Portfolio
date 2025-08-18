@@ -9,6 +9,11 @@ interface Paper {
 
 const papers: Paper[] = [
   {
+    title: "Lloyd Expressway Traffic Signal Logic Optimization",
+    description: "This paper, written over the course of my junior year, was submitted for AP Research (on which I received a 5) and my IB Extended Essay. It explores the optimization of traffic signal logic on the Lloyd Expressway.",
+    pdfUrl: "/lloyd-expressway-traffic-paper.pdf", // Path to your PDF in the public folder
+  },
+  {
     title: "My First Research Paper",
     description: "This paper explores the initial findings of my research into [brief topic]. It details the methodology, results, and conclusions drawn from the study.",
     pdfUrl: "/paper1.pdf", // Path to your PDF in the public folder
