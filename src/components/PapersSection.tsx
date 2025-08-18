@@ -30,8 +30,13 @@ const papers: Paper[] = [
   },
   {
     title: "An Analysis of the Role of Mass Media and the United States Government in Manipulating Public Opinion During Times of Crisis with Modern Application",
-    description: "This paper was written during my junior year as a part of my AP Seminar class, and it was a part of the reason why I received the AP Capstone Diploma.",
+    description: "This paper was written during my sophomore year as a part of my AP Seminar class, and it was a part of the reason why I received the AP Capstone Diploma.",
     pdfUrl: "/mass-media-manipulation-paper.pdf", // Path to your PDF in the public folder
+  },
+  {
+    title: "United States Immigration Policy Consideration: Impact of the H-1B Visa Program on the United States Job Market",
+    description: "This paper was written during my sophomore year as a part of a collaborative project, exploring the impact of the H-1B Visa Program on the U.S. job market.",
+    pdfUrl: "/h1b-visa-impact-paper.pdf", // Path to your PDF in the public folder
   },
 ];
 
