@@ -30,7 +30,8 @@ const apScores: APScore[] = [
     year: "2025",
     scores: [
       { subject: "AP English Literature and Composition", score: "4" },
-      { subject: "AP Calculus BC", score: "5, AB Subscore: 5" },
+      { subject: "AP Calculus BC", score: "5" }, // Changed to only BC score
+      { subject: "AP Calculus AB Subscore", score: "5" }, // New entry for AB Subscore
       { subject: "AP Spanish Language and Culture", score: "5" },
       { subject: "AP Physics 2: Algebra-Based", score: "5" },
       { subject: "AP Research", score: "5" },
