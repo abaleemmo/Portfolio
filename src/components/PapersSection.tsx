@@ -18,6 +18,11 @@ const papers: Paper[] = [
     description: "This paper was my team's submission for the 2025 M3 Challenge. I wrote it alongside 4 of my friends in a 14-hour span, analyzing data provided to us and leveraging physics principles and math to model the data, as well as leveraging machine learning.",
     pdfUrl: "/m3-challenge-solution-paper.pdf", // Path to your PDF in the public folder
   },
+  {
+    title: "Effect of Surface Area of a Spherical Bob on the Damping of a Simple Pendulum",
+    description: "This paper looks at the effect of surface area of a spherical bob on the damping of a simple pendulum. I wrote this paper during my junior year as a part of my IB Physics SL curriculum, and received a 19 raw mark and 18 moderated mark.",
+    pdfUrl: "/pendulum-damping-paper.pdf", // Path to your PDF in the public folder
+  },
 ];
 
 const PapersSection: React.FC = () => {
