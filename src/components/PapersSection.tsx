@@ -38,6 +38,11 @@ const papers: Paper[] = [
     description: "This paper was written during my sophomore year as a part of a collaborative project, exploring the impact of the H-1B Visa Program on the U.S. job market.",
     pdfUrl: "/h1b-visa-impact-paper.pdf", // Path to your PDF in the public folder
   },
+  {
+    title: "2024-2025 Wharton Investment Competition Final Report",
+    description: "This report was written during my junior year with a group to justify our investment strategy in curating a portfolio in accordance with a case study.",
+    pdfUrl: "/wharton-investment-report.pdf", // Path to your PDF in the public folder
+  },
 ];
 
 const PapersSection: React.FC = () => {
