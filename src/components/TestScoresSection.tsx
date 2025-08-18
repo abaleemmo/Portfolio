@@ -11,6 +11,13 @@ interface IBScore {
   scores: { subject: string; score: string; }[];
 }
 
+interface StandardizedTestScore {
+  testName: string;
+  overallScore: string;
+  sections: { subject: string; score: string; }[];
+  description?: string;
+}
+
 const apScores: APScore[] = [
   {
     year: "2023",
@@ -74,6 +81,38 @@ const ibScores: IBScore[] = [
   },
 ];
 
+const standardizedTestScores: StandardizedTestScore[] = [
+  {
+    testName: "PSAT/NMSQT",
+    overallScore: "1500",
+    sections: [
+      { subject: "Math", score: "760 (Perfect Score)" },
+      { subject: "Evidence-Based Reading and Writing", score: "740" },
+    ],
+    description: "Achieved a near-perfect score on the PSAT/NMSQT, demonstrating strong aptitude in both mathematical and verbal reasoning.",
+  },
+  {
+    testName: "SAT",
+    overallScore: "1510",
+    sections: [
+      { subject: "Math", score: "770" },
+      { subject: "Evidence-Based Reading and Writing", score: "740" },
+    ],
+    description: "Scored highly on the SAT, showcasing robust academic readiness for college-level coursework.",
+  },
+  {
+    testName: "ACT",
+    overallScore: "34",
+    sections: [
+      { subject: "Math", score: "35" },
+      { subject: "Reading", score: "35" },
+      { subject: "English", score: "35" },
+      { subject: "Science", score: "32" },
+    ],
+    description: "Achieved a strong composite score on the ACT, with exceptional performance across multiple subjects.",
+  },
+];
+
 const TestScoresSection: React.FC = () => {
   return (
     <section className="py-12 md:py-24 bg-white dark:bg-gray-800">
@@ -121,6 +160,27 @@ const TestScoresSection: React.FC = () => {
               ))}
             </CardContent>
           </Card>
+
+          {standardizedTestScores.map((test, index) => (
+            <Card key={index} className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 mt-8">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold">{test.testName} Scores</CardTitle>
+                <CardDescription className="text-gray-600 dark:text-gray-400">
+                  {test.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-4 last:mb-0">
+                  <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">Overall Score: {test.overallScore}</h3>
+                  <ul className="list-disc pl-8 space-y-1 text-gray-700 dark:text-gray-300">
+                    {test.sections.map((section, sectionIndex) => (
+                      <li key={sectionIndex}>{section.subject}: {section.score}</li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
