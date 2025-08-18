@@ -31,7 +31,7 @@ const educationEntries: EducationEntry[] = [
     location: "TBD",
     dates: "Fall 2026 - Ongoing",
     description: [
-      "Looking forward to continuing my academic journey and exploring new fields of study at the university level."
+      "Looking forward to continuing my academic journey, with a strong interest in pursuing Physics and Mathematics to PhD levels."
     ],
   },
 ];
