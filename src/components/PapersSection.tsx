@@ -28,6 +28,11 @@ const papers: Paper[] = [
     description: "This paper looks at the effect of note-taking medium on memory recall as guided by the external storage hypothesis. I wrote this paper during my junior year as a part of my IB Psychology SL curriculum, conducting the experiment in a group of 5 on freshmen. I received a 17 raw and moderated mark.",
     pdfUrl: "/note-taking-memory-paper.pdf", // Path to your PDF in the public folder
   },
+  {
+    title: "An Analysis of the Role of Mass Media and the United States Government in Manipulating Public Opinion During Times of Crisis with Modern Application",
+    description: "This paper was written during my junior year as a part of my AP Seminar class, and it was a part of the reason why I received the AP Capstone Diploma.",
+    pdfUrl: "/mass-media-manipulation-paper.pdf", // Path to your PDF in the public folder
+  },
 ];
 
 const PapersSection: React.FC = () => {
