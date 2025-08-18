@@ -16,19 +16,20 @@ const educationEntries: EducationEntry[] = [
     location: "Evansville, IN",
     dates: "August 2022 - May 2026 (Expected)",
     description: [
-      "Signature School is a nationally recognized, tuition-free charter high school known for its rigorous curriculum in STEM and liberal arts.",
-      "Consistently ranked among the top high schools in the nation, it fosters an environment of academic excellence and critical thinking.",
-      "Engaged in a challenging academic program designed to prepare students for top universities."
+      "Signature School is a nationally recognized, tuition-free charter high school known for its rigorous curriculum in STEM and liberal arts. Consistently ranked among the top high schools in the nation, it fosters an environment of academic excellence and critical thinking.",
+      "Engaged in a challenging academic program designed to prepare students for top universities, emphasizing critical thinking, problem-solving, and interdisciplinary learning.",
+      "Actively participated in various academic clubs and competitions, further developing skills in leadership, teamwork, and specialized subjects.",
+      "Undertook advanced coursework in subjects like AP Calculus, AP Physics, and Computer Science, demonstrating a strong aptitude for rigorous academic challenges.",
+      "Collaborated on numerous projects, fostering a collaborative learning environment and enhancing communication skills."
     ],
   },
   {
-    degree: "Dual Credit Courses",
-    institution: "University of Southern Indiana",
-    location: "Evansville, IN",
-    dates: "August 2024 - Ongoing",
+    degree: "Future College Education",
+    institution: "Pursuing higher education",
+    location: "TBD",
+    dates: "Fall 2026 - Ongoing",
     description: [
-      "Completed courses in Calculus I, Physics, and Computer Science.",
-      "Gained college-level academic experience."
+      "Looking forward to continuing my academic journey and exploring new fields of study at the university level."
     ],
   },
 ];
