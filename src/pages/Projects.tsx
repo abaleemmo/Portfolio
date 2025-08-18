@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from '@/components/Layout';
+import PapersSection from '@/components/PapersSection'; // Import PapersSection
+import { Separator } from '@/components/ui/separator'; // Import Separator
 
 const Projects = () => {
   return (
@@ -10,6 +12,9 @@ const Projects = () => {
           Showcase your amazing projects here! Each project can have a title, description, and links.
         </p>
       </div>
+      <PapersSection /> {/* Add the PapersSection here */}
+      <Separator className="my-12 md:my-24" /> {/* Add a separator */}
+      {/* You can add other project sections below this */}
     </Layout>
   );
 };
