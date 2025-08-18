@@ -10,15 +10,9 @@ interface GraphicDesignProject {
 
 const graphicDesignProjects: GraphicDesignProject[] = [
   {
-    title: "Boomerang Learning LLC Marketing Materials",
-    description: "Designed various marketing materials including an informational website, pamphlets, business cards, and shirts for Boomerang Learning LLC.",
-    imageUrl: "/placeholder.svg", // Placeholder image, replace with actual image
-    link: "#", // Replace with actual link if available
-  },
-  {
-    title: "Paradime Enterprise LLC Online Store",
-    description: "Designed the online store and product labels for Paradime Enterprise LLC, managing perfume inventory and fulfilling orders.",
-    imageUrl: "/placeholder.svg", // Placeholder image, replace with actual image
+    title: "Marketing Label for Paradime Enterprise",
+    description: "Designed a marketing label for Paradime Enterprise to direct customers to the new website. The design was optimized for cost-effective printing on a label printer and high visibility when affixed to product boxes.",
+    imageUrl: "/placeholder.svg", // Placeholder image, please replace with your actual image
     link: "#", // Replace with actual link if available
   },
   // Add more graphic design projects here
