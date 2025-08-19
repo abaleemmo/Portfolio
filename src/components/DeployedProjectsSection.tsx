@@ -10,8 +10,8 @@ interface DeployedProject {
 const deployedProjects: DeployedProject[] = [
   {
     title: "Digital Menu for Manna Mediterranean Grill",
-    description: "A modern, interactive digital menu designed for Manna Mediterranean Grill, enhancing customer experience and streamlining ordering.",
-    url: "https://manna-sign-iota.vercel.app/", // Updated link
+    description: "A modern, interactive digital menu designed for Manna Mediterranean Grill, enhancing customer experience and streamlining ordering. This menu is optimized for a 43-inch TV display, so please zoom to 80% for the best viewing experience.",
+    url: "https://manna-sign-iota.vercel.app/",
   },
   // Add more deployed projects here
 ];
