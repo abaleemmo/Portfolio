@@ -7,9 +7,10 @@ interface ProjectLinkCardProps {
   title: string;
   description: string;
   url: string;
+  zoomLevel?: number; // New prop for zoom level
 }
 
-const ProjectLinkCard: React.FC<ProjectLinkCardProps> = ({ title, description, url }) => {
+const ProjectLinkCard: React.FC<ProjectLinkCardProps> = ({ title, description, url, zoomLevel }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -22,11 +23,11 @@ const ProjectLinkCard: React.FC<ProjectLinkCardProps> = ({ title, description, u
           <div>
             <p className="text-sm text-gray-700 dark:text-gray-300">{description}</p>
           </div>
-          <div className="mt-4 flex justify-end space-x-2"> {/* Added space-x-2 for button spacing */}
+          <div className="mt-4 flex justify-end space-x-2">
             <Button onClick={() => setIsModalOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white">
               View Live
             </Button>
-            <a href={url} target="_blank" rel="noopener noreferrer"> {/* New button to open in new tab */}
+            <a href={url} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-gray-700">
                 Open in New Tab
               </Button>
@@ -40,6 +41,7 @@ const ProjectLinkCard: React.FC<ProjectLinkCardProps> = ({ title, description, u
         url={url}
         title={title}
         description={description}
+        zoomLevel={zoomLevel} // Pass zoomLevel here
       />
     </>
   );

@@ -7,12 +7,13 @@ interface ExternalViewerModalProps {
   url: string;
   title: string;
   description: string;
+  zoomLevel?: number; // New prop for zoom level
 }
 
-const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClose, url, title, description }) => {
+const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClose, url, title, description, zoomLevel = 0.6 }) => { // Default to 0.6 if not provided
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl h-[90vh] flex flex-col"> {/* Changed max-w-4xl to max-w-6xl */}
+      <DialogContent className="max-w-6xl h-[90vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
           <DialogDescription className="text-gray-600 dark:text-gray-400">
@@ -25,7 +26,7 @@ const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClo
             className="w-full h-full" 
             title={title} 
             allowFullScreen 
-            style={{ zoom: '0.6', MozTransform: 'scale(0.6)', MozTransformOrigin: '0 0' }}
+            style={{ zoom: zoomLevel, MozTransform: `scale(${zoomLevel})`, MozTransformOrigin: '0 0' }} // Use zoomLevel here
           />
         </div>
       </DialogContent>
