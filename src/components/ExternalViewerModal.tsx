@@ -25,7 +25,7 @@ const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClo
             className="w-full h-full" 
             title={title} 
             allowFullScreen 
-            style={{ zoom: '0.5', MozTransform: 'scale(0.5)', MozTransformOrigin: '0 0' }} // Zoom changed to 50%
+            style={{ zoom: '0.7', MozTransform: 'scale(0.7)', MozTransformOrigin: '0 0' }} // Zoom changed to 70%
           />
         </div>
       </DialogContent>
