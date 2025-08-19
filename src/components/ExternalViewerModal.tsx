@@ -20,7 +20,13 @@ const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClo
           </DialogDescription>
         </DialogHeader>
         <div className="flex-grow overflow-hidden rounded-md border">
-          <iframe src={url} className="w-full h-full" title={title} allowFullScreen />
+          <iframe 
+            src={url} 
+            className="w-full h-full" 
+            title={title} 
+            allowFullScreen 
+            style={{ zoom: '0.8', MozTransform: 'scale(0.8)', MozTransformOrigin: '0 0' }} // Apply zoom for various browsers
+          />
         </div>
       </DialogContent>
     </Dialog>

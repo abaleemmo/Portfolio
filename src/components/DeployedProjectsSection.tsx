@@ -11,7 +11,7 @@ const deployedProjects: DeployedProject[] = [
   {
     title: "Digital Menu for Manna Mediterranean Grill",
     description: "A modern, interactive digital menu designed for Manna Mediterranean Grill, enhancing customer experience and streamlining ordering.",
-    url: "https://manna-mediterranean-grill.vercel.app/", // This is the link you provided!
+    url: "https://manna-sign-iota.vercel.app/", // Updated link
   },
   // Add more deployed projects here
 ];
