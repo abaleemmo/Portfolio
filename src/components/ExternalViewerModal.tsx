@@ -12,7 +12,7 @@ interface ExternalViewerModalProps {
 const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClose, url, title, description }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl h-[90vh] flex flex-col">
+      <DialogContent className="max-w-6xl h-[90vh] flex flex-col"> {/* Changed max-w-4xl to max-w-6xl */}
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
           <DialogDescription className="text-gray-600 dark:text-gray-400">
@@ -25,7 +25,7 @@ const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClo
             className="w-full h-full" 
             title={title} 
             allowFullScreen 
-            style={{ zoom: '0.6', MozTransform: 'scale(0.6)', MozTransformOrigin: '0 0' }} // Zoom changed to 60%
+            style={{ zoom: '0.6', MozTransform: 'scale(0.6)', MozTransformOrigin: '0 0' }}
           />
         </div>
       </DialogContent>
