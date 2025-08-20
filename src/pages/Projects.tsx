@@ -9,8 +9,12 @@ const Projects = () => {
   return (
     <Layout>
       <div className="container py-12 md:py-24 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Projects</h2>
-        {/* Removed the descriptive paragraph */}
+        <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-900 dark:text-gray-50">
+          My Creative Endeavors
+        </h2>
+        <p className="mx-auto max-w-[800px] text-lg text-gray-600 md:text-xl mt-4 leading-relaxed">
+          Explore a collection of my diverse projects, ranging from deployed web applications and academic papers to graphic design work. Each project showcases my skills, creativity, and dedication to bringing ideas to life.
+        </p>
       </div>
       <DeployedProjectsSection />
       <Separator className="my-12 md:my-24" />
