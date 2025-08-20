@@ -9,7 +9,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // Set up the worker source for pdf.js
 // IMPORTANT: You need to download 'pdf.worker.min.js' and place it in your 'public' folder.
 // You can get it from: https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js
-pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 interface PdfViewerModalProps {
   isOpen: boolean;
