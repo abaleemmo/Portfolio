@@ -31,7 +31,7 @@ const deployedProjects: DeployedProject[] = [
     title: "Shopify Store for Paradime Enterprise LLC",
     description: "Developed and managed a comprehensive e-commerce platform for Paradime Enterprise LLC, showcasing products with an intuitive user experience and robust backend functionality.",
     url: "https://paradimeent.com/",
-    zoomLevel: 1.0, // Set zoom to 100% for this project
+    // Removed zoomLevel as it cannot be embedded in an iframe
   },
   // Add more deployed projects here
 ];
