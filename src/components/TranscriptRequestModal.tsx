@@ -48,24 +48,33 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
   });
 
   const relationship = form.watch("relationship");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("Form submitted:", values);
-    const subject = encodeURIComponent("Transcript Request from Portfolio");
-    const body = encodeURIComponent(
-      `First Name: ${values.firstName}\n` +
-      `Last Name: ${values.lastName}\n` +
-      `Email: ${values.email}\n` +
-      `Relationship: ${values.relationship === "Other" ? values.otherRelationship : values.relationship}\n\n` +
-      `I would like to request a transcript.`
-    );
-    
-    // This will open the user's default email client.
-    // For actual email sending, a backend service is required.
-    window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
-    
-    toast.success("Transcript request initiated! Please complete the email in your mail client.");
-    onClose();
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/send-transcript-request', { // This is the endpoint for your serverless function
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        toast.success("Transcript request sent successfully!");
+        form.reset();
+        onClose();
+      } else {
+        const errorData = await response.json();
+        toast.error(`Failed to send request: ${errorData.message || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error("Error sending transcript request:", error);
+      toast.error("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,8 +162,8 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
               )}
             </div>
           )}
-          <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-4">
-            Submit Request
+          <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-4" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Submit Request"}
           </Button>
         </form>
       </DialogContent>
