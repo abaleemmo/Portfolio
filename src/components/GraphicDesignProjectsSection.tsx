@@ -11,7 +11,7 @@ const graphicDesignProjects: GraphicDesignProject[] = [
   {
     title: "Marketing Label for Paradime Enterprise",
     description: "Designed a marketing label for Paradime Enterprise to direct customers to the new website. The design was optimized for cost-effective printing on a label printer and high visibility when affixed to product boxes.",
-    imageUrl: "/placeholder.svg", // Placeholder image, please replace with your actual image path (e.g., /images/paradime-marketing-label.png)
+    imageUrl: "/paradime-marketing-label.png", // Updated image path
   },
   // Add more graphic design projects here
 ];
