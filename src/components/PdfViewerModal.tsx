@@ -7,10 +7,10 @@ interface PdfViewerModalProps {
   pdfUrl: string;
   title: string;
   description: string;
-  zoomLevel?: number; // New prop for zoom level
+  // Removed zoomLevel prop as it's no longer needed for this approach
 }
 
-const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl, title, description, zoomLevel = 0.8 }) => { // Default to 0.8 if not provided
+const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl, title, description }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl h-[90vh] flex flex-col">
@@ -20,13 +20,13 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
             {description}
           </DialogDescription>
         </DialogHeader>
-        <div className="flex-grow rounded-md border"> {/* Removed overflow-hidden */}
+        <div className="flex-grow rounded-md border">
           <iframe
             src={pdfUrl}
             className="w-full h-full"
             title={title}
             allowFullScreen
-            style={{ zoom: zoomLevel, MozTransform: `scale(${zoomLevel})`, MozTransformOrigin: '0 0' }} // Apply zoomLevel here
+            // Removed style={{ zoom: zoomLevel, MozTransform: `scale(${zoomLevel})`, MozTransformOrigin: '0 0' }}
           />
         </div>
       </DialogContent>

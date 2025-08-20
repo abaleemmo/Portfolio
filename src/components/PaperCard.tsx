@@ -30,7 +30,7 @@ const PaperCard: React.FC<PaperCardProps> = ({ title, description, pdfUrl }) => 
         pdfUrl={pdfUrl}
         title={title}
         description={description}
-        zoomLevel={0.8} // Pass zoomLevel to the modal
+        // Removed zoomLevel={0.8}
       />
     </>
   );
