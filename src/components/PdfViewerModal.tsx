@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Set up the worker source for pdf.js
-// IMPORTANT: You need to download 'pdf.worker.min.js' and place it in your 'public' folder.
-// You can get it from: https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 interface PdfViewerModalProps {
@@ -24,8 +22,6 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null); // Ref for the container
-  const [containerWidth, setContainerWidth] = useState<number | null>(null); // State for container width
 
   useEffect(() => {
     if (isOpen) {
@@ -35,31 +31,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
       setIsLoading(true);
       setError(null);
     }
-
-    // Set up ResizeObserver for responsive PDF rendering
-    const currentContainer = containerRef.current;
-    if (currentContainer) {
-      const observer = new ResizeObserver(entries => {
-        for (let entry of entries) {
-          if (entry.contentBoxSize) {
-            // contentBoxSize is an array, take the first element
-            setContainerWidth(entry.contentBoxSize[0].inlineSize);
-          } else {
-            setContainerWidth(entry.contentRect.width);
-          }
-        }
-      });
-
-      observer.observe(currentContainer);
-
-      // Initial width setting
-      setContainerWidth(currentContainer.clientWidth);
-
-      return () => {
-        observer.unobserve(currentContainer);
-      };
-    }
-  }, [isOpen, pdfUrl]); // Depend on isOpen and pdfUrl to re-initialize observer if modal content changes
+  }, [isOpen, pdfUrl]);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
@@ -97,10 +69,10 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
             {description}
           </DialogDescription>
         </DialogHeader>
-        <div ref={containerRef} className="flex-grow rounded-md border overflow-y-auto flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-700">
+        <div className="flex-grow rounded-md border overflow-y-auto flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-700">
           {isLoading && !error && <p className="text-lg text-gray-500 dark:text-gray-300">Loading PDF...</p>}
           {error && <p className="text-lg text-red-500 dark:text-red-400 text-center">{error}</p>}
-          {!error && containerWidth && ( // Only render Document if no error and containerWidth is known
+          {!error && (
             <Document
               key={pdfUrl}
               file={pdfUrl}
@@ -113,12 +85,8 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
                 renderAnnotationLayer={true}
                 renderTextLayer={true}
                 className="max-w-full h-auto"
-                width={containerWidth} // Pass the dynamically calculated width
               />
             </Document>
-          )}
-          {!error && !containerWidth && !isLoading && (
-            <p className="text-lg text-gray-500 dark:text-gray-300">Waiting for container dimensions...</p>
           )}
         </div>
         {numPages && numPages > 1 && !error && (
