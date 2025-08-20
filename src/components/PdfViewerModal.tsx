@@ -6,8 +6,8 @@ import 'react-pdf/dist/Page/TextLayer.css';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Set up the worker source for pdf.js
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+// Set up the worker source for pdf.js to a local path
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`; // Changed to local path
 
 interface PdfViewerModalProps {
   isOpen: boolean;
@@ -30,7 +30,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
       setPageNumber(1);
       setIsLoading(true);
       setError(null);
-      console.log("Attempting to load PDF from URL:", pdfUrl); // Added for debugging
+      console.log("Attempting to load PDF from URL:", pdfUrl);
     }
   }, [isOpen, pdfUrl]);
 
