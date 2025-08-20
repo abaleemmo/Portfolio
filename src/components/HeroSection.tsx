@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full py-10 md:py-20 lg:py-28 xl:py-36 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+    <section className="relative w-full py-8 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container px-4 md:px-6 text-center">
         <div className="flex flex-col items-center space-y-4">
           {/* Monogram image adjusted to be 75% width of the text */}
