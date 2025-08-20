@@ -22,11 +22,19 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null); // New state for error
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
     setPageNumber(1); // Reset to first page on new document load
     setIsLoading(false);
+    setError(null); // Clear any previous errors
+  }
+
+  function onDocumentLoadError(err: any) {
+    console.error("Error loading PDF:", err);
+    setIsLoading(false);
+    setError("Failed to load PDF. Please ensure the file exists and is accessible."); // Set error message
   }
 
   function changePage(offset: number) {
@@ -52,27 +60,26 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
           </DialogDescription>
         </DialogHeader>
         <div className="flex-grow rounded-md border overflow-y-auto flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-700">
-          {isLoading && <p className="text-lg text-gray-500 dark:text-gray-300">Loading PDF...</p>}
-          <Document
-            file={pdfUrl}
-            onLoadSuccess={onDocumentLoadSuccess}
-            onLoadError={(error) => {
-              console.error("Error loading PDF:", error);
-              setIsLoading(false);
-              // You might want to show a toast error here
-            }}
-            className="w-full h-full flex justify-center items-center" // Center the document
-          >
-            <Page
-              pageNumber={pageNumber}
-              renderAnnotationLayer={true}
-              renderTextLayer={true}
-              className="max-w-full h-auto" // Ensure page scales within container
-              width={Math.min(window.innerWidth * 0.8, 800)} // Adjust width for responsiveness
-            />
-          </Document>
+          {isLoading && !error && <p className="text-lg text-gray-500 dark:text-gray-300">Loading PDF...</p>}
+          {error && <p className="text-lg text-red-500 dark:text-red-400 text-center">{error}</p>} {/* Display error message */}
+          {!error && ( // Only render Document if no error
+            <Document
+              file={pdfUrl}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={onDocumentLoadError} // Use the new error handler
+              className="w-full h-full flex justify-center items-center" // Center the document
+            >
+              <Page
+                pageNumber={pageNumber}
+                renderAnnotationLayer={true}
+                renderTextLayer={true}
+                className="max-w-full h-auto" // Ensure page scales within container
+                width={Math.min(window.innerWidth * 0.8, 800)} // Adjust width for responsiveness
+              />
+            </Document>
+          )}
         </div>
-        {numPages && numPages > 1 && (
+        {numPages && numPages > 1 && !error && ( // Only show controls if no error and multiple pages
           <div className="flex justify-center items-center gap-4 mt-4">
             <Button
               onClick={previousPage}
