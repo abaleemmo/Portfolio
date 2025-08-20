@@ -24,7 +24,7 @@ const deployedProjects: DeployedProject[] = [
   {
     title: "BulliBuddy",
     description: "A platform inspired by a teacher's need, BulliBuddy enhances student-teacher accessibility, making it easier for educators to connect with students and efficiently answer their questions.",
-    url: "https://bulli-buddy.vercel.app/login",
+    url: "https://bulli-buddy.vercel.app/", // Updated URL
     zoomLevel: 1.0, // Set zoom to 100% for this project
   },
   // Add more deployed projects here
