@@ -30,6 +30,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
       setPageNumber(1);
       setIsLoading(true);
       setError(null);
+      console.log("Attempting to load PDF from URL:", pdfUrl); // Added for debugging
     }
   }, [isOpen, pdfUrl]);
 
