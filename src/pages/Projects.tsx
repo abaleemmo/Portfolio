@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import PapersSection from '@/components/PapersSection';
 import GraphicDesignProjectsSection from '@/components/GraphicDesignProjectsSection';
-import DeployedProjectsSection from '@/components/DeployedProjectsSection'; // Import new section
+import DeployedProjectsSection from '@/components/DeployedProjectsSection';
 import { Separator } from '@/components/ui/separator';
 
 const Projects = () => {
@@ -10,11 +10,9 @@ const Projects = () => {
     <Layout>
       <div className="container py-12 md:py-24 text-center">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Projects</h2>
-        <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl mt-4">
-          Showcase your amazing projects here! Each project can have a title, description, and links.
-        </p>
+        {/* Removed the descriptive paragraph */}
       </div>
-      <DeployedProjectsSection /> {/* Add the Deployed Projects section here */}
+      <DeployedProjectsSection />
       <Separator className="my-12 md:my-24" />
       <PapersSection />
       <Separator className="my-12 md:my-24" />
