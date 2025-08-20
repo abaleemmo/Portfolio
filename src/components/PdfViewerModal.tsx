@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { useIsMobile } from '@/hooks/use-mobile'; // Import useIsMobile
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PdfViewerModalProps {
   isOpen: boolean;
@@ -10,9 +10,18 @@ interface PdfViewerModalProps {
   description: string;
 }
 
+const AP_RESEARCH_PDF_URL = "/lloyd-expressway-traffic-paper.pdf";
+const GOOGLE_DRIVE_EMBED_URL = "https://drive.google.com/file/d/1K49YijsfPpVi4rA67gUPJAyr0b40h434/preview";
+
 const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl, title, description }) => {
   const isMobile = useIsMobile();
-  const zoomLevel = isMobile ? 0.3 : 0.8; // Even more zoomed out on mobile
+
+  const isApResearchOnMobile = isMobile && pdfUrl === AP_RESEARCH_PDF_URL;
+
+  const iframeSrc = isApResearchOnMobile ? GOOGLE_DRIVE_EMBED_URL : pdfUrl;
+  const iframeStyle = isApResearchOnMobile
+    ? {} // Google Drive embed handles its own scaling, no custom zoom needed
+    : { zoom: isMobile ? 0.3 : 0.8, MozTransform: `scale(${isMobile ? 0.3 : 0.8})`, MozTransformOrigin: '0 0' };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -25,11 +34,11 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
         </DialogHeader>
         <div className="flex-grow rounded-md border overflow-hidden">
           <iframe
-            src={pdfUrl}
+            src={iframeSrc}
             className="w-full h-full"
             title={title}
             allowFullScreen
-            style={{ zoom: zoomLevel, MozTransform: `scale(${zoomLevel})`, MozTransformOrigin: '0 0' }}
+            style={iframeStyle}
           />
         </div>
       </DialogContent>
