@@ -13,6 +13,11 @@ const graphicDesignProjects: GraphicDesignProject[] = [
     description: "Designed a marketing label for Paradime Enterprise to direct customers to the new website. The design was optimized for cost-effective printing on a label printer and high visibility when affixed to product boxes.",
     imageUrl: "/paradime-marketing-label.png", // Updated image path
   },
+  {
+    title: "Business Card for Paradime Enterprise LLC",
+    description: "Designed a professional business card for Paradime Enterprise LLC, incorporating brand elements and essential contact information for networking and client engagement.",
+    imageUrl: "/paradime-business-card.png", // Placeholder for the business card image
+  },
   // Add more graphic design projects here
 ];
 
