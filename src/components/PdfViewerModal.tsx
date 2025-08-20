@@ -20,7 +20,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
             {description}
           </DialogDescription>
         </DialogHeader>
-        <div className="flex-grow overflow-hidden rounded-md border">
+        <div className="flex-grow rounded-md border"> {/* Removed overflow-hidden */}
           <iframe
             src={pdfUrl}
             className="w-full h-full"
