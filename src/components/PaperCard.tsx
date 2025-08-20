@@ -15,7 +15,7 @@ const PaperCard: React.FC<PaperCardProps> = ({ title, description, pdfUrl }) => 
   return (
     <>
       <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
-        <CardHeader>
+        <CardHeader> {/* Removed AspectRatio and img from here */}
           <CardTitle className="text-xl font-semibold">{title}</CardTitle>
         </CardHeader>
         <CardContent className="flex justify-end">
@@ -30,6 +30,7 @@ const PaperCard: React.FC<PaperCardProps> = ({ title, description, pdfUrl }) => 
         pdfUrl={pdfUrl}
         title={title}
         description={description}
+        zoomLevel={0.8} // Pass zoomLevel to the modal
       />
     </>
   );
