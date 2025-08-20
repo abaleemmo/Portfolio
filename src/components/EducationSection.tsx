@@ -7,7 +7,8 @@ interface EducationEntry {
   location: string;
   dates: string;
   description?: string[];
-  gpa?: string; // Added GPA to the interface
+  gpa?: string;
+  showTranscriptButton?: boolean; // Added to interface for clarity
 }
 
 const educationEntries: EducationEntry[] = [
@@ -16,7 +17,7 @@ const educationEntries: EducationEntry[] = [
     institution: "Signature School",
     location: "Evansville, IN",
     dates: "August 2022 - May 2026 (Expected)",
-    gpa: "4.5870 / 4.0 Scale", // Added GPA here
+    gpa: "4.5870 / 4.0 Scale",
     description: [
       "Signature School is a nationally recognized, tuition-free charter high school known for its rigorous curriculum in STEM and liberal arts. Consistently ranked among the top high schools in the nation, it fosters an environment of academic excellence and critical thinking.",
       "Engaged in a challenging academic program designed to prepare students for top universities, emphasizing critical thinking, problem-solving, and interdisciplinary learning.",
@@ -24,6 +25,7 @@ const educationEntries: EducationEntry[] = [
       "Undertook advanced coursework in subjects like AP Calculus, AP Physics, and Computer Science, demonstrating a strong aptitude for rigorous academic challenges.",
       "Collaborated on numerous projects, fostering a collaborative learning environment and enhancing communication skills."
     ],
+    showTranscriptButton: true, // Set to true for this entry
   },
   {
     degree: "Future College Education",

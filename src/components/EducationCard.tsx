@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button'; // Import Button
 
 interface EducationCardProps {
   degree: string;
@@ -7,28 +8,41 @@ interface EducationCardProps {
   location: string;
   dates: string;
   description?: string[];
-  gpa?: string; // New prop for GPA
+  gpa?: string;
+  showTranscriptButton?: boolean; // New prop for transcript button
 }
 
-const EducationCard: React.FC<EducationCardProps> = ({ degree, institution, location, dates, description, gpa }) => {
+const EducationCard: React.FC<EducationCardProps> = ({ degree, institution, location, dates, description, gpa, showTranscriptButton }) => {
   return (
     <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
         <CardTitle className="text-xl font-semibold">{degree}</CardTitle>
         <CardDescription className="text-gray-600 dark:text-gray-400">
           {institution} {location && `• ${location}`} • {dates}
-          {gpa && <p className="mt-2 text-lg font-bold text-gray-800 dark:text-gray-200">GPA: {gpa}</p>} {/* Display GPA with more prominent styling */}
+          {gpa && <p className="mt-2 text-lg font-bold text-gray-800 dark:text-gray-200">GPA: {gpa}</p>}
         </CardDescription>
       </CardHeader>
-      {description && description.length > 0 && (
+      {(description && description.length > 0) || showTranscriptButton ? ( // Conditionally render CardContent
         <CardContent>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
-            {description.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          {description && description.length > 0 && (
+            <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+              {description.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
+          {showTranscriptButton && (
+            <div className="mt-6 text-center">
+              <Button 
+                onClick={() => window.open('https://www.signatureschool.org/academics/transcripts', '_blank')} // Placeholder link
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                Request Transcript
+              </Button>
+            </div>
+          )}
         </CardContent>
-      )}
+      ) : null}
     </Card>
   );
 };
