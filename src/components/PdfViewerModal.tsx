@@ -12,7 +12,7 @@ interface PdfViewerModalProps {
 
 const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl, title, description }) => {
   const isMobile = useIsMobile();
-  const zoomLevel = isMobile ? 0.6 : 0.8; // Zoom out more on mobile
+  const zoomLevel = isMobile ? 0.3 : 0.8; // Even more zoomed out on mobile
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>

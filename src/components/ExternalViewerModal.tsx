@@ -14,7 +14,7 @@ interface ExternalViewerModalProps {
 const ExternalViewerModal: React.FC<ExternalViewerModalProps> = ({ isOpen, onClose, url, title, description, zoomLevel }) => {
   const isMobile = useIsMobile();
   // Use provided zoomLevel if available, otherwise default based on mobile status
-  const effectiveZoomLevel = zoomLevel !== undefined ? zoomLevel : (isMobile ? 0.4 : 0.6);
+  const effectiveZoomLevel = zoomLevel !== undefined ? zoomLevel : (isMobile ? 0.2 : 0.6); // Even more zoomed out on mobile
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
