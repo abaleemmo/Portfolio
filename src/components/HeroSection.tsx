@@ -7,8 +7,9 @@ const HeroSection = () => {
     <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container px-4 md:px-6 text-center">
         <div className="flex flex-col items-center space-y-4">
+          {/* Monogram image moved above the text and made larger */}
+          <img src="/monogram.png" alt="Abdul-Aleem Mohammed Monogram" className="h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 dark:invert mb-4" />
           <div className="flex items-center justify-center gap-4">
-            <img src="/monogram.png" alt="Abdul-Aleem Mohammed Monogram" className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 dark:invert" />
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none text-gray-900 dark:text-gray-50">
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Abdul-Aleem Mohammed</span>
             </h1>
