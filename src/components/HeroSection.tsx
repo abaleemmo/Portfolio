@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full py-8 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+    <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container px-4 md:px-6 text-center">
         <div className="flex flex-col items-center space-y-4">
-          {/* Monogram image adjusted to be wider and scale with text */}
-          <img src="/monogram.png" alt="Abdul-Aleem Mohammed Monogram" className="w-full max-w-2xl h-auto dark:invert mb-4" />
+          {/* Monogram image adjusted to be 75% width of the text */}
+          <img src="/monogram.png" alt="Abdul-Aleem Mohammed Monogram" className="w-3/4 max-w-2xl h-auto dark:invert mb-4 mx-auto" />
           <div className="flex items-center justify-center gap-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none text-gray-900 dark:text-gray-50">
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Abdul-Aleem Mohammed</span>
