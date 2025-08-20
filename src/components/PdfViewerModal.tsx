@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css'; // Corrected path
-import 'react-pdf/dist/Page/TextLayer.css';     // Corrected path
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -22,19 +22,32 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null); // New state for error
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      console.log("PdfViewerModal opened. PDF URL:", pdfUrl);
+      console.log("Window inner width:", window.innerWidth);
+      // Reset state when modal opens
+      setNumPages(null);
+      setPageNumber(1);
+      setIsLoading(true);
+      setError(null);
+    }
+  }, [isOpen, pdfUrl]);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
-    setPageNumber(1); // Reset to first page on new document load
+    setPageNumber(1);
     setIsLoading(false);
-    setError(null); // Clear any previous errors
+    setError(null);
+    console.log("PDF loaded successfully. Number of pages:", numPages);
   }
 
   function onDocumentLoadError(err: any) {
     console.error("Error loading PDF:", err);
     setIsLoading(false);
-    setError("Failed to load PDF. Please ensure the file exists and is accessible."); // Set error message
+    setError("Failed to load PDF. Please ensure the file exists and is accessible.");
   }
 
   function changePage(offset: number) {
@@ -61,25 +74,26 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
         </DialogHeader>
         <div className="flex-grow rounded-md border overflow-y-auto flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-700">
           {isLoading && !error && <p className="text-lg text-gray-500 dark:text-gray-300">Loading PDF...</p>}
-          {error && <p className="text-lg text-red-500 dark:text-red-400 text-center">{error}</p>} {/* Display error message */}
-          {!error && ( // Only render Document if no error
+          {error && <p className="text-lg text-red-500 dark:text-red-400 text-center">{error}</p>}
+          {!error && (
             <Document
+              key={pdfUrl} // Add key to force re-render if pdfUrl changes
               file={pdfUrl}
               onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={onDocumentLoadError} // Use the new error handler
-              className="w-full h-full flex justify-center items-center" // Center the document
+              onLoadError={onDocumentLoadError}
+              className="w-full h-full flex justify-center items-center"
             >
               <Page
                 pageNumber={pageNumber}
                 renderAnnotationLayer={true}
                 renderTextLayer={true}
                 className="max-w-full h-auto" // Ensure page scales within container
-                width={Math.min(window.innerWidth * 0.8, 800)} // Adjust width for responsiveness
+                // Removed width prop to allow natural scaling
               />
             </Document>
           )}
         </div>
-        {numPages && numPages > 1 && !error && ( // Only show controls if no error and multiple pages
+        {numPages && numPages > 1 && !error && (
           <div className="flex justify-center items-center gap-4 mt-4">
             <Button
               onClick={previousPage}
