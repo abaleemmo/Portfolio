@@ -8,7 +8,7 @@ interface EducationEntry {
   dates: string;
   description?: string[];
   gpa?: string;
-  showTranscriptButton?: boolean; // Added to interface for clarity
+  showTranscriptButton?: boolean; // Added back to interface for clarity
 }
 
 const educationEntries: EducationEntry[] = [

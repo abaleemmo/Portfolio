@@ -53,7 +53,7 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/send-transcript-request', { // This is the endpoint for your serverless function
+      const response = await fetch('/api/send-transcript-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

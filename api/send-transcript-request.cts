@@ -24,7 +24,7 @@ module.exports = async function handler(req: VercelRequest, res: VercelResponse)
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  const recipientEmail = 'abaleemmohammed@gmail.com';
+  const recipientEmail = 'abaleemmohammed@gmail.com'; // Your email address
   const subject = `Transcript Request from Portfolio: ${firstName} ${lastName}`;
   const relationshipDetail = relationship === 'Other' ? otherRelationship : relationship;
   const emailBody = `
@@ -38,7 +38,7 @@ module.exports = async function handler(req: VercelRequest, res: VercelResponse)
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio <onboarding@resend.dev>',
+      from: 'Portfolio <onboarding@resend.dev>', // This sender email must be verified in your Resend account
       to: [recipientEmail],
       subject: subject,
       html: emailBody.replace(/\n/g, '<br />'),
