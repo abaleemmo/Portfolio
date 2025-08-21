@@ -8,7 +8,7 @@ interface EducationEntry {
   dates: string;
   description?: string[];
   gpa?: string;
-  showTranscriptButton?: boolean; // Added back to interface for clarity
+  // showTranscriptButton?: boolean; // Removed from interface
 }
 
 const educationEntries: EducationEntry[] = [
@@ -25,7 +25,7 @@ const educationEntries: EducationEntry[] = [
       "Undertook advanced coursework in subjects like AP Calculus, AP Physics, and Computer Science, demonstrating a strong aptitude for rigorous academic challenges.",
       "Collaborated on numerous projects, fostering a collaborative learning environment and enhancing communication skills."
     ],
-    showTranscriptButton: true, // Set to true for this entry
+    // showTranscriptButton: true, // Removed this line
   },
   {
     degree: "Future College Education",

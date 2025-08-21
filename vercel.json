@@ -1,15 +1,3 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "src/api/**/*.ts": {
-      "runtime": "node@18.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/send-transcript-request",
-      "dest": "/api/send-transcript-request",
-      "methods": ["POST"]
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }
