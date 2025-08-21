@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('re_Hg1HKtWT_Jk862KrXcvropd5f1MxX8WJi'); // Your provided API Key
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -16,8 +16,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const data = await resend.emails.send({
-      from: 'Transcript Request <onboarding@resend.dev>', // IMPORTANT: Replace with your verified domain or use Resend's default
-      to: 'your-email@example.com', // IMPORTANT: Replace with your actual email address to receive requests
+      from: 'Transcript Request <abaleemmohammed@gmail.com>', // Sending from your email
+      to: 'abaleemmohammed@gmail.com', // Receiving at your email
       subject: `Transcript Request from ${firstName} ${lastName}`,
       html: `
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
