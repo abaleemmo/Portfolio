@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import PapersSection from '@/components/PapersSection';
-import GraphicDesignProjectsSection from '@/components/GraphicDesignProjectsSection';
-import DeployedProjectsSection from '@/components/DeployedProjectsSection';
+import ProjectsSection from '@/components/ProjectsSection';
 import { Separator } from '@/components/ui/separator';
 
 const Projects = () => {
@@ -16,11 +15,9 @@ const Projects = () => {
           Explore a collection of my diverse projects, ranging from deployed web applications and academic papers to graphic design work. Each project showcases my skills, creativity, and dedication to bringing ideas to life.
         </p>
       </div>
-      <DeployedProjectsSection />
+      <ProjectsSection />
       <Separator className="my-12 md:my-24" />
       <PapersSection />
-      <Separator className="my-12 md:my-24" />
-      <GraphicDesignProjectsSection />
       <Separator className="my-12 md:my-24" />
       {/* You can add other project sections below this */}
     </Layout>
