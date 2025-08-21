@@ -10,16 +10,27 @@ interface PdfViewerModalProps {
   description: string;
 }
 
-const AP_RESEARCH_PDF_URL = "/lloyd-expressway-traffic-paper.pdf";
-const GOOGLE_DRIVE_EMBED_URL = "https://drive.google.com/file/d/1K49YijsfPpVi4rA67gUPJAyr0b40h434/preview";
+// Map of local PDF paths to their Google Drive embed URLs
+const PDF_EMBED_MAP: { [key: string]: string } = {
+  "/lloyd-expressway-traffic-paper.pdf": "https://drive.google.com/file/d/1K49YijsfPpVi4rA67gUPJAyr0b40h434/preview",
+  "/m3-challenge-solution-paper.pdf": "https://drive.google.com/file/d/1RaBg5siiWj4r_a-HqwSIdAzj-L4SHpeX/preview",
+  "/pendulum-damping-paper.pdf": "https://drive.google.com/file/d/1ojpsM2KQzkA9NxSC5zvSI1YfiOBL4fMM/preview",
+  "/note-taking-memory-paper.pdf": "https://drive.google.com/file/d/1JV9s-m6zVqYkUB4ESdjwfG7nkcSc9ESP/preview",
+  "/mass-media-manipulation-paper.pdf": "https://drive.google.com/file/d/1eC3myObE6YiENzR5Uqd7pDZGlvPnfBip/preview",
+  "/h1b-visa-impact-paper.pdf": "https://drive.google.com/file/d/1mU4v8LCfMyGNZoXrhmY9ZOf7_IHh27r3/preview",
+  "/wharton-investment-report.pdf": "https://drive.google.com/file/d/12vJ8uCh6yxafLIk57-nh6UpMHlkE6gKr/preview",
+  "/wharton-investment-report-2024.pdf": "https://drive.google.com/file/d/1dx2txKwepE5wL3XabWysVkC27OOgggZD/preview",
+};
 
 const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl, title, description }) => {
   const isMobile = useIsMobile();
 
-  const isApResearchOnMobile = isMobile && pdfUrl === AP_RESEARCH_PDF_URL;
+  // Determine if we should use a Google Drive embed for the current PDF on mobile
+  const googleDriveEmbedUrl = PDF_EMBED_MAP[pdfUrl];
+  const useGoogleDriveEmbed = isMobile && googleDriveEmbedUrl;
 
-  const iframeSrc = isApResearchOnMobile ? GOOGLE_DRIVE_EMBED_URL : pdfUrl;
-  const iframeStyle = isApResearchOnMobile
+  const iframeSrc = useGoogleDriveEmbed ? googleDriveEmbedUrl : pdfUrl;
+  const iframeStyle = useGoogleDriveEmbed
     ? {} // Google Drive embed handles its own scaling, no custom zoom needed
     : { zoom: isMobile ? 0.3 : 0.8, MozTransform: `scale(${isMobile ? 0.3 : 0.8})`, MozTransformOrigin: '0 0' };
 
