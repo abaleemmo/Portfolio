@@ -16,7 +16,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const data = await resend.emails.send({
-      from: 'Transcript Request <abaleemmohammed@gmail.com>', // Sending from your email
+      from: 'Transcript Request <onboarding@resend.dev>', // Using Resend's default sender
       to: 'abaleemmohammed@gmail.com', // Receiving at your email
       subject: `Transcript Request from ${firstName} ${lastName}`,
       html: `
