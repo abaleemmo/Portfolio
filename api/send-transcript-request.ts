@@ -14,7 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  const recipientEmail = 'your-email@example.com'; // IMPORTANT: Replace with your actual email address
+  const recipientEmail = 'abaleemmohammed@gmail.com'; // Updated with your email
   const subject = `Transcript Request from Portfolio: ${firstName} ${lastName}`;
   const relationshipDetail = relationship === 'Other' ? otherRelationship : relationship;
   const emailBody = `
@@ -28,7 +28,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio <onboarding@resend.dev>', // IMPORTANT: Replace with your verified Resend domain
+      from: 'Portfolio <onboarding@resend.dev>', // Keep this if you don't have a custom domain verified with Resend
       to: [recipientEmail],
       subject: subject,
       html: emailBody.replace(/\n/g, '<br />'), // Convert newlines to HTML breaks
