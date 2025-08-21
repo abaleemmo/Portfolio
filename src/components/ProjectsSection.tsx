@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectLinkCard from './ProjectLinkCard';
 import GraphicDesignCard from './GraphicDesignCard';
-// Separator is no longer needed for side-by-side layout
+import { Separator } from '@/components/ui/separator'; // Re-import Separator for stacking
 
 interface DeployedProject {
   title: string;
@@ -66,26 +66,22 @@ const ProjectsSection: React.FC = () => {
       <div className="container px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">My Projects</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12"> {/* Main grid for side-by-side sections */}
-          {/* Deployed Projects Sub-section */}
-          <div>
-            <h3 className="text-2xl font-semibold text-center lg:text-left mb-8 text-gray-800 dark:text-gray-200">Deployed Applications</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Inner grid for cards */}
-              {deployedProjects.map((project, index) => (
-                <ProjectLinkCard key={index} {...project} zoomLevel={project.zoomLevel} canEmbed={project.canEmbed} /> 
-              ))}
-            </div>
-          </div>
+        {/* Deployed Projects Sub-section */}
+        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">Deployed Applications</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {deployedProjects.map((project, index) => (
+            <ProjectLinkCard key={index} {...project} zoomLevel={project.zoomLevel} canEmbed={project.canEmbed} /> 
+          ))}
+        </div>
 
-          {/* Graphic Design Projects Sub-section */}
-          <div>
-            <h3 className="text-2xl font-semibold text-center lg:text-left mb-8 text-gray-800 dark:text-gray-200">Graphic Design & Marketing</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Inner grid for cards */}
-              {graphicDesignProjects.map((project, index) => (
-                <GraphicDesignCard key={index} {...project} />
-              ))}
-            </div>
-          </div>
+        <Separator className="my-12 md:my-24" /> {/* Separator between sections */}
+
+        {/* Graphic Design Projects Sub-section */}
+        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">Graphic Design & Marketing</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {graphicDesignProjects.map((project, index) => (
+            <GraphicDesignCard key={index} {...project} />
+          ))}
         </div>
       </div>
     </section>
