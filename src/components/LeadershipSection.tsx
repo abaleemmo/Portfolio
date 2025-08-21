@@ -16,7 +16,6 @@ const leadershipExperiences: LeadershipExperience[] = [
     description: [
       "Mentored teams to develop business ideas",
       "Coached teams and refined underclassmen pitching skills",
-      "Established a pitch competition at Signature School"
     ],
   },
   {
