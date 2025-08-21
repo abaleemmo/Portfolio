@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "src/api/**/*.ts": {
-      "runtime": "nodejs18.x"
+      "runtime": "node@18.x"
     }
   },
   "routes": [
