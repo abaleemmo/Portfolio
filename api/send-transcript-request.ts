@@ -3,7 +3,8 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// Changed to module.exports for Vercel compatibility
+module.exports = async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
@@ -44,4 +45,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.error('Server error:', error);
     return res.status(500).json({ message: 'Internal server error', error: error.message });
   }
-}
+};
