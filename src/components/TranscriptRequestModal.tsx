@@ -77,8 +77,7 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
         </DialogHeader>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          // IMPORTANT: Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
-          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+          action="https://formspree.io/f/xrblwdbk" // Updated with your Formspree ID
           method="POST"
           className="grid gap-4 py-4"
         >
