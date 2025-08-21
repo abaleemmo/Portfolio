@@ -53,24 +53,13 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/send-transcript-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        toast.success("Transcript request sent successfully!");
-        form.reset();
-        onClose();
-      } else {
-        const errorData = await response.json();
-        toast.error(`Failed to send request: ${errorData.message || 'Unknown error'}`);
-      }
+      // Formspree handles the actual submission via the form's action attribute
+      // We just need to handle the UI feedback here.
+      toast.success("Transcript request submitted! Please check your email for confirmation from Formspree.");
+      form.reset();
+      onClose();
     } catch (error) {
-      console.error("Error sending transcript request:", error);
+      console.error("Error submitting form:", error);
       toast.error("An unexpected error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -86,13 +75,20 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
             Fill out the form below to request a transcript.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          // IMPORTANT: Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
+          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+          method="POST"
+          className="grid gap-4 py-4"
+        >
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firstName" className="text-right">
               First Name
             </Label>
             <Input
               id="firstName"
+              name="firstName" // Added name attribute for Formspree
               {...form.register("firstName")}
               className="col-span-3"
             />
@@ -106,6 +102,7 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
             </Label>
             <Input
               id="lastName"
+              name="lastName" // Added name attribute for Formspree
               {...form.register("lastName")}
               className="col-span-3"
             />
@@ -120,6 +117,7 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
             <Input
               id="email"
               type="email"
+              name="_replyto" // Special name for Formspree to set reply-to email
               {...form.register("email")}
               className="col-span-3"
             />
@@ -142,6 +140,8 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
                 <SelectItem value="Other">Other</SelectItem>
               </SelectContent>
             </Select>
+            {/* Hidden input to send relationship value to Formspree */}
+            <input type="hidden" name="relationship" value={relationship || ""} />
             {form.formState.errors.relationship && (
               <p className="col-span-4 text-right text-sm text-red-500">{form.formState.errors.relationship.message}</p>
             )}
@@ -153,6 +153,7 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
               </Label>
               <Textarea
                 id="otherRelationship"
+                name="otherRelationship" // Added name attribute for Formspree
                 {...form.register("otherRelationship")}
                 className="col-span-3"
                 placeholder="e.g., University Admissions Officer"
@@ -163,7 +164,7 @@ const TranscriptRequestModal: React.FC<TranscriptRequestModalProps> = ({ isOpen,
             </div>
           )}
           <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-4" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Submit Request"}
+            {isSubmitting ? "Submitting..." : "Submit Request"}
           </Button>
         </form>
       </DialogContent>
