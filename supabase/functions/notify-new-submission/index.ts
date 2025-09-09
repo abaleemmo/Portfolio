@@ -16,6 +16,8 @@ serve(async (req) => {
   }
 
   try {
+    // Create a Supabase client for potential future database interactions within the function
+    // (though not strictly needed for just sending an email based on the request body)
     const supabaseClient = createClient(
       // @ts-ignore
       Deno.env.get('SUPABASE_URL') ?? '',
@@ -35,51 +37,39 @@ serve(async (req) => {
     }
     const resend = new Resend(resendApiKey);
 
-    const payload = await req.json();
-    console.log('Realtime payload received:', payload);
+    const submissionData = await req.json();
+    console.log('Received submission data:', submissionData);
 
-    // We are only interested in INSERT events for the contact_submissions table
-    if (payload.table === 'contact_submissions' && payload.type === 'INSERT') {
-      const newSubmission = payload.record;
+    const emailContent = `
+      New Contact Form Submission!
 
-      const emailContent = `
-        New Contact Form Submission!
+      First Name: ${submissionData.first_name}
+      Last Name: ${submissionData.last_name}
+      Email: ${submissionData.email || 'N/A'}
+      Phone Number: ${submissionData.phone_number || 'N/A'}
+      Topic: ${submissionData.topic}
+      ${submissionData.topic === 'other' && submissionData.other_topic_description ? `Other Topic Description: ${submissionData.other_topic_description}` : ''}
+      Message:
+      ${submissionData.message}
+    `;
 
-        First Name: ${newSubmission.first_name}
-        Last Name: ${newSubmission.last_name}
-        Email: ${newSubmission.email || 'N/A'}
-        Phone Number: ${newSubmission.phone_number || 'N/A'}
-        Topic: ${newSubmission.topic}
-        ${newSubmission.topic === 'other' && newSubmission.other_topic_description ? `Other Topic Description: ${newSubmission.other_topic_description}` : ''}
-        Message:
-        ${newSubmission.message}
-      `;
+    const { data, error } = await resend.emails.send({
+      from: 'onboarding@resend.dev', // Verified sender email
+      to: 'abaleemmohammed@gmail.com', // Your recipient email
+      subject: `New Contact Submission: ${submissionData.topic}`,
+      text: emailContent,
+    });
 
-      // Replace 'your-verified-sender@example.com' with an email you've verified with Resend
-      // Replace 'your-recipient-email@example.com' with the email address where you want to receive notifications
-      const { data, error } = await resend.emails.send({
-        from: 'onboarding@resend.dev', // Use a verified sender email from your Resend account
-        to: 'your-recipient-email@example.com', // Your email to receive notifications
-        subject: `New Contact Submission: ${newSubmission.topic}`,
-        text: emailContent,
-      });
-
-      if (error) {
-        console.error('Error sending email:', error);
-        return new Response(JSON.stringify({ error: error.message }), {
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-          status: 500,
-        });
-      }
-
-      console.log('Email sent successfully:', data);
-      return new Response(JSON.stringify({ message: 'Notification email sent.' }), {
+    if (error) {
+      console.error('Error sending email:', error);
+      return new Response(JSON.stringify({ error: error.message }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 200,
+        status: 500,
       });
     }
 
-    return new Response(JSON.stringify({ message: 'Not a relevant Realtime event.' }), {
+    console.log('Email sent successfully:', data);
+    return new Response(JSON.stringify({ message: 'Notification email sent.' }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 200,
     });

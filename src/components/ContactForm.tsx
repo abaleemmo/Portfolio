@@ -69,7 +69,8 @@ const ContactForm: React.FC = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      const { error } = await supabase
+      // First, insert into the database
+      const { error: dbError } = await supabase
         .from("contact_submissions")
         .insert([
           {
@@ -83,14 +84,33 @@ const ContactForm: React.FC = () => {
           },
         ]);
 
-      if (error) {
-        throw error;
+      if (dbError) {
+        throw dbError;
       }
 
-      showSuccess("Your message has been sent successfully!");
+      // Then, invoke the Edge Function to send the email
+      const { data: edgeFunctionData, error: edgeFunctionError } = await supabase.functions.invoke(
+        'notify-new-submission',
+        {
+          body: values, // Pass the form values directly to the Edge Function
+          // You might need to specify a region if your function is not in the default region
+          // region: 'us-east-1', 
+        }
+      );
+
+      if (edgeFunctionError) {
+        console.error("Error invoking Edge Function:", edgeFunctionError);
+        // Even if email fails, we still want to show success for the form submission
+        // but log the email error.
+        showError("Message sent, but failed to send notification email. Please check logs.");
+      } else {
+        console.log("Edge Function invoked successfully:", edgeFunctionData);
+        showSuccess("Your message has been sent successfully!");
+      }
+      
       form.reset();
     } catch (error) {
-      console.error("Error submitting contact form:", error);
+      console.error("Error submitting contact form or invoking Edge Function:", error);
       showError("Failed to send your message. Please try again.");
     } finally {
       setIsLoading(false);
