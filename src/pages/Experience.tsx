@@ -12,7 +12,7 @@ const Experience = () => {
         <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-900 dark:text-gray-50">
           My Journey Through Experience
         </h2>
-        <p className="mx-auto max-w-[800px] text-lg text-gray-600 md:text-xl mt-4 leading-relaxed">
+        <p className="mx-auto max-w-[800px] text-lg text-gray-700 md:text-xl mt-4 leading-relaxed dark:text-gray-300">
           Explore the diverse experiences that have shaped my journey, from professional roles and impactful volunteer work to leadership positions and academic pursuits. Each entry reflects a step in my growth and commitment.
         </p>
       </div>

@@ -13,12 +13,12 @@ const LeadershipCard: React.FC<LeadershipCardProps> = ({ title, organization, da
     <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
         <CardTitle className="text-xl font-semibold">{title}</CardTitle>
-        <CardDescription className="text-gray-600 dark:text-gray-400">
+        <CardDescription className="text-gray-700 dark:text-gray-300">
           {organization} • {dates}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+        <ul className="list-disc pl-5 space-y-1 text-gray-800 dark:text-gray-200">
           {description.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

@@ -22,7 +22,7 @@ const ProjectLinkCard: React.FC<ProjectLinkCardProps> = ({ title, description, u
         </CardHeader>
         <CardContent className="p-4 flex-grow flex flex-col justify-between">
           <div>
-            <p className="text-sm text-gray-700 dark:text-gray-300">{description}</p>
+            <p className="text-sm text-gray-800 dark:text-gray-200">{description}</p>
           </div>
           <div className="mt-4 flex justify-end space-x-2">
             {canEmbed && ( // Conditionally render "View Live" button

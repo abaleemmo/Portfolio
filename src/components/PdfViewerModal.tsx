@@ -39,7 +39,7 @@ const PdfViewerModal: React.FC<PdfViewerModalProps> = ({ isOpen, onClose, pdfUrl
       <DialogContent className="w-[98vw] h-[98vh] max-w-full max-h-full flex flex-col p-4 sm:p-6 md:p-8">
         <DialogHeader className="mb-4">
           <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
-          <DialogDescription className="text-gray-600 dark:text-gray-400">
+          <DialogDescription className="text-gray-700 dark:text-gray-300">
             {description}
           </DialogDescription>
         </DialogHeader>

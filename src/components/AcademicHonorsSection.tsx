@@ -63,12 +63,12 @@ const AcademicHonorsSection: React.FC = () => {
             <Card key={index} className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold">{honor.title}</CardTitle>
-                <CardDescription className="text-gray-600 dark:text-gray-400">
+                <CardDescription className="text-gray-700 dark:text-gray-300">
                   {honor.issuer} • {honor.dates}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 dark:text-gray-300">{honor.description}</p>
+                <p className="text-gray-800 dark:text-gray-200">{honor.description}</p>
               </CardContent>
             </Card>
           ))}

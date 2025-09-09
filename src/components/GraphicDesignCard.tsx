@@ -20,7 +20,7 @@ const GraphicDesignCard: React.FC<GraphicDesignCardProps> = ({ title, descriptio
         </CardHeader>
         <CardContent className="p-4 flex-grow flex flex-col justify-between">
           <div>
-            <p className="text-sm text-gray-700 dark:text-gray-300">{description}</p>
+            <p className="text-sm text-gray-800 dark:text-gray-200">{description}</p>
           </div>
           <div className="mt-4 flex justify-end">
             <Button onClick={() => setIsModalOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white">

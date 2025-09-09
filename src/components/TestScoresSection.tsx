@@ -122,7 +122,7 @@ const TestScoresSection: React.FC = () => {
           <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-xl font-semibold">Advanced Placement (AP) Scores</CardTitle>
-              <CardDescription className="text-gray-600 dark:text-gray-400">
+              <CardDescription className="text-gray-700 dark:text-gray-300">
                 My AP scores consistently reflect strong performance in challenging subjects, with many results significantly exceeding national averages. For detailed national average scores by subject and year, please refer to the official College Board website (collegeboard.org).
               </CardDescription>
             </CardHeader>
@@ -130,7 +130,7 @@ const TestScoresSection: React.FC = () => {
               {apScores.map((yearData, index) => (
                 <div key={index} className="mb-4 last:mb-0">
                   <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">• {yearData.year}:</h3>
-                  <ul className="list-disc pl-8 space-y-1 text-gray-700 dark:text-gray-300">
+                  <ul className="list-disc pl-8 space-y-1 text-gray-800 dark:text-gray-200">
                     {yearData.scores.map((score, scoreIndex) => (
                       <li key={scoreIndex}>{score.subject} ({score.score})</li>
                     ))}
@@ -143,7 +143,7 @@ const TestScoresSection: React.FC = () => {
           <Card className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 mt-8">
             <CardHeader>
               <CardTitle className="text-xl font-semibold">International Baccalaureate (IB) Scores</CardTitle>
-              <CardDescription className="text-gray-600 dark:text-gray-400">
+              <CardDescription className="text-gray-700 dark:text-gray-300">
                 My IB scores reflect my performance in the rigorous International Baccalaureate Diploma Programme. For more information on IB scoring and subject details, please refer to the official International Baccalaureate Organization website (ibo.org).
               </CardDescription>
             </CardHeader>
@@ -151,7 +151,7 @@ const TestScoresSection: React.FC = () => {
               {ibScores.map((yearData, index) => (
                 <div key={index} className="mb-4 last:mb-0">
                   <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">• {yearData.year}:</h3>
-                  <ul className="list-disc pl-8 space-y-1 text-gray-700 dark:text-gray-300">
+                  <ul className="list-disc pl-8 space-y-1 text-gray-800 dark:text-gray-200">
                     {yearData.scores.map((score, scoreIndex) => (
                       <li key={scoreIndex}>{score.subject} ({score.score})</li>
                     ))}
@@ -165,14 +165,14 @@ const TestScoresSection: React.FC = () => {
             <Card key={index} className="w-full max-w-2xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 mt-8">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold">{test.testName} Scores</CardTitle>
-                <CardDescription className="text-gray-600 dark:text-gray-400">
+                <CardDescription className="text-gray-700 dark:text-gray-300">
                   {test.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-4 last:mb-0">
                   <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">Overall Score: {test.overallScore}</h3>
-                  <ul className="list-disc pl-8 space-y-1 text-gray-700 dark:text-gray-300">
+                  <ul className="list-disc pl-8 space-y-1 text-gray-800 dark:text-gray-200">
                     {test.sections.map((section, sectionIndex) => (
                       <li key={sectionIndex}>{section.subject}: {section.score}</li>
                     ))}
